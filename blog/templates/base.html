@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset='utf-8'>
-        <meta title='base'>
-    </head>
+<html lang='ko'>
+    {% include 'head.html' %}
     <body>
-        <h1>
-            hello world!
-        </h1>
+        {% include 'header.html' %} <!--재사용을 위해 헤더와 푸터는 분리해 include 한다.-->
+        
+<!--extends 구문을 사용하기 위해 block을 만들어야 한다?-->
+<!-- 이걸 사용하기 위해 accountapp 폴더 내부에 templates, 그 안에 또 accountapp이라는 폴더를 만들고 그 안에 html 파일을 넣어준다. view에서 html파일 가져온 경로를 어느 앱인지 알기 쉽게 하기 위해서 -->
+        {% block content %} 
+        
+        
+        
+        {% endblock %}
+        
+        
+        {% include 'footer.html' %}
     </body>
 </html>
