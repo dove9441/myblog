@@ -4,9 +4,9 @@
 
 {% block content %}
 <!-- 여기서 바꾼 내용이 base.html 안의 content 블럭으로 들어간다 -->
-<div style="height:20rem; background-color:#38df81; border-radius:1rem; margin:2rem;">
+<div style="border-radius:1rem; margin:2rem; text-align:center;">
     
-<h1>
+<h1 style="font-family: 'Lobster', cursive;">
     hello world!
     </h1>
     
@@ -14,12 +14,23 @@
     <form action="/account/hello_world/" method="post">
         <!-- post 쓸 때는 꼭 아래의 csrf token 써야 오류가 안 난다-->
         {% csrf_token %}
-        <input type="submit" class="btn btn-primary" value="POST">
+        <div>
+            <input type="text" name="hello_world_input">
+        </div>
+        
+        <div>
+            <input type="submit" class="btn btn-primary" value="POST">
+        </div>
+        
+        
     </form>
     
+    
+    {% if hello_world_output %} <!-- hello_world_output 객체가 존재하는지 확인-->
     <h1>
-        {{ text }} <!-- view에서 return한 데이터 등에서 text라는 이름을 가진 객체의 값을 가져온다-->
+        {{ hello_world_output.text }} <!-- view에서 return한 데이터 등에서 text라는 이름을 가진 객체의 값을 가져온다-->
     </h1>
+    {% endif %}
     
     
     

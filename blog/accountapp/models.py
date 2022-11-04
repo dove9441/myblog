@@ -8,5 +8,5 @@ from django.db import models
 
 
 
-class HelloWorld(models.Model):
+class HelloWorld(models.Model): #HelloWorld 객체는 text 멤버변수를 가지고 있다.
     text = models.CharField(max_length=255, null=False)
