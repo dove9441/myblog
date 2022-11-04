@@ -1,11 +1,18 @@
+{% load static %}
+
 <head>
     <!--부트스트랩 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     
-    <!--폰트-->
+    <!--폰트 (구글 폰트 이용)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <meta charset='utf-8'>
     <meta title='base'>
+    
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}"> <!-- setting.py에서 STATIC_URL이 static이다-->
 </head>

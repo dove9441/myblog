@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], #여기서 템플릿의 경로를 추가
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #여기서 템플릿의 경로를 추가 base.dir은 앞에 정의되어 있다
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+#python manage.py collectstatic으로 static 파일들을 모을 수 있음. 아래 경로가 그 파일들이 모이는 경로임. css 등 잘 변경하지 않는 것을 static으로 변경하기 위함.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [ 
+    os.path.join (BASE_DIR, 'static'),   #blog/static을 의미한다 (콤마 필수)
+                   ] 
