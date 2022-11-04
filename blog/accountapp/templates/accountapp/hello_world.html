@@ -8,7 +8,20 @@
     
 <h1>
     hello world!
-    </h1>    
+    </h1>
+    
+    
+    <form action="/account/hello_world/" method="post">
+        <!-- post 쓸 때는 꼭 아래의 csrf token 써야 오류가 안 난다-->
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="POST">
+    </form>
+    
+    <h1>
+        {{ text }} <!-- view에서 return한 데이터 등에서 text라는 이름을 가진 객체의 값을 가져온다-->
+    </h1>
+    
+    
     
 </div>
 

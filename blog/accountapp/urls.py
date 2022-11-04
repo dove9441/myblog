@@ -8,5 +8,5 @@ app_name='hello_world' #하면 좋음. 계속 쳐야 하니 그냥 이름 변수
 
 
 urlpatterns = [
-    path('hello_world',hello_world, name='hello_world')
+    path('hello_world/', hello_world, name='hello_world')
 ]
