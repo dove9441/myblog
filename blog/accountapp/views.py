@@ -12,6 +12,10 @@ from django.views.generic import *  #CreateView, DetailView 등 불러오기
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
+
+# UpdateView에서 수정된 form_class를 적용하기 위해 불러옴. 기본 경로는 blog이기 때문에 accountapp.forms이다.
+from accountapp.forms import AccountUpdateForm
+
 # Create your views here. 
 
 def hello_world(request):
@@ -58,6 +62,11 @@ class AccountDetailView(DetailView):
     template_name = 'accountapp/detail.html'
     
     
+class AccountUpdateView(UpdateView):
+    model = User
+    form_class = AccountUpdateForm
+    success_url = reverse_lazy('accountapp:hello_world') 
+    template_name = 'accountapp/update.html'
     
     
 #처음 이렇게 만들고 root에서 setting.py에서 템플릿 경로 추가
