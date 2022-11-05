@@ -17,5 +17,5 @@ urlpatterns = [
     path('create/', AccountCreateView.as_view(), name='create'), #class형 view는 이후에 .as_view()를 적어야 한다.
     path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'), #<int:pk>는 접속 사용자 각각의 개별 구별자이다 (primary key)
     path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
- 
+    path('delete/<int:pk>', AccountDeleteView.as_view(), name='delete'),
 ]

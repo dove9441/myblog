@@ -10,7 +10,10 @@
         <span>nav3</span> |
         {% if not user.is_authenticated %}
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}"> <!-- login 이후 redirect는 1. next 인자, 2. LOGIN_REDIRECT_URL (settings.py)를 통해 redirect됨.-->
-            <span>login</span>
+            <span>login</span> |
+        </a>
+        <a href="{% url 'accountapp:create' %}">
+        	<span>SignUp</span> |
         </a>
         {% else %}
         <a href="{% url 'accountapp:detail' pk=user.pk %}"> <!-- 이렇게 하면 접속 시 user의 pk를 같이 넘겨준다-->

@@ -8,12 +8,17 @@
             {{ target_user.date_joined }}
         </p>
         <h2 style="font-family: 'NanumSqureB">
-            {{ target_user.username }}
+            {{ target_user.username }} 
         </h2>
         {% if target_user == user %} <!-- target_user가 현재 접속한 user라면 (target_user는 views.py의 AccountDetailView에 있다)-->
         <a href="{% url 'accountapp:update' pk=user.pk %}">
         	<p>
                 Change Info
+            </p>
+        </a>
+        <a href="{% url 'accountapp:delete' pk=user.pk %}">
+        	<p>
+                Quit
             </p>
         </a>
         {% endif %}
