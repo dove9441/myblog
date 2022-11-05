@@ -8,7 +8,7 @@ from django.urls import reverse, reverse_lazy
 from accountapp.models import HelloWorld
 
 # CRUD View class 이용한 CreateView 만들기
-from django.views.generic import CreateView
+from django.views.generic import *  #CreateView, DetailView 등 불러오기
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -52,7 +52,10 @@ class AccountCreateView(CreateView):
     
     
     
-    
+class AccountDetailView(DetailView):
+    model = User #U 대문자이다..
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
     
     
     

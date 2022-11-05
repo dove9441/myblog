@@ -14,3 +14,11 @@ font-family: 'Lobster', cursive;
 .dove_footer_btn{
     margin-top:2rem;
 }
+
+
+
+.dove_500px_div{
+    text-align:center;
+    max-width:500px;
+    margin:4rem auto;
+}

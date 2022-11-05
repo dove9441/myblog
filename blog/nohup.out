@@ -1,0 +1,26 @@
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+accountapp.HelloWorld: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the AccountappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 1 issue (0 silenced).
+Not Found: /
+[05/Nov/2022 11:50:45] "GET / HTTP/1.1" 404 2170
+Not Found: /favicon.ico
+[05/Nov/2022 11:50:45] "GET /favicon.ico HTTP/1.1" 404 2221
+Not Found: /
+[05/Nov/2022 11:52:58] "GET / HTTP/1.1" 404 2170
+Not Found: /favicon.ico
+[05/Nov/2022 11:52:58] "GET /favicon.ico HTTP/1.1" 404 2221
+Not Found: /login
+[05/Nov/2022 11:53:06] "GET /login HTTP/1.1" 404 2203
+[05/Nov/2022 11:53:18] "GET /account/login HTTP/1.1" 301 0
+[05/Nov/2022 11:53:19] "GET /account/login/ HTTP/1.1" 200 4583
+[05/Nov/2022 11:53:19] "GET /static/base.css HTTP/1.1" 200 276
+[05/Nov/2022 11:53:19] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+Not Found: /
+[05/Nov/2022 13:01:59] "GET / HTTP/1.1" 404 2170
+Not Found: /favicon.ico
+[05/Nov/2022 13:01:59] "GET /favicon.ico HTTP/1.1" 404 2221
