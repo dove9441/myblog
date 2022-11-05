@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse #추가해야 한다
+from django.http import HttpResponseRedirect #이것도 따로 해야 한다..
+from django.urls import reverse, reverse_lazy
 
 
 # 모델도 import해야 한다.
 from accountapp.models import HelloWorld
 
+# CRUD View class 이용한 CreateView 만들기
+from django.views.generic import CreateView
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here. 
 
@@ -16,21 +22,33 @@ def hello_world(request):
         
         
         #DB에 저장하기 
-        new_hello_world = HelloWorld() #객체 생성
+        new_hello_world = HelloWorld() #인스턴스 생성 (객체 타입은 HelloWorld이다)
         new_hello_world.text = temp
-        new_hello_world.save()
+        new_hello_world.save() #DB에 new_hello_world 인스턴스를 저장
         
+        #DB에서 불러오기
         
-        return render(request, 'accountapp/hello_world.html', context={'hello_world_output': new_hello_world}) #/accountapp/hello_world가 아니다. 앞에 /는 꼭 빼야 한다 context는 보내줄 데이터다
+        hello_world_list = HelloWorld.objects.all() #HelloWorld 클래스 타입 내장 기본 함수여서 HelloWorld.을 쓰나보다?
+        
+        return HttpResponseRedirect(reverse('accountapp:hello_world')) #/accountapp/urls.py의 app_name을 입력하면 알아서 urlpatterns의 경로를 참고하여 account/hello_world로 변환된다.
+    
+    
+        #return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
     else:
-        return render(request, 'accountapp/hello_world.html', context={'text': "GET_METHOD!"})
+        hello_world_list = HelloWorld.objects.all()
+        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list}) #/accountapp/hello_world가 아니다. 앞에 /는 꼭 빼야 한다 context는 보내줄 데이터다
 
     
     
     
+
     
     
-    
+class AccountCreateView(CreateView):
+    model = User
+    form_class = UserCreationForm
+    success_url = reverse_lazy('accountapp:hello_world') #reverse_lazy는 reverse와 같지만 reverse는 function에서, reverse_lazy는 class에서 사용한다.
+    template_name = 'accountapp/create.html'
     
     
     
