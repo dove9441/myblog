@@ -2,10 +2,6 @@
 font-family: 'Lobster', cursive;
 }
 
-.dove_footer_btn{
-    margin-top:2rem;
-}
-
 .dove_footer{
     text-align:center; 
 }
@@ -13,4 +9,8 @@ font-family: 'Lobster', cursive;
 .dove_header{
     text-align:center;
     margin:2rem 0;
+}
+
+.dove_footer_btn{
+    margin-top:2rem;
 }
