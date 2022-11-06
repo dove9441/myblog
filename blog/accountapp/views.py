@@ -64,6 +64,7 @@ class AccountDetailView(DetailView):
     
 class AccountUpdateView(UpdateView):
     model = User
+    context_object_name = 'target_user'
     form_class = AccountUpdateForm
     success_url = reverse_lazy('accountapp:hello_world') 
     template_name = 'accountapp/update.html'
@@ -72,6 +73,7 @@ class AccountUpdateView(UpdateView):
     
 class AccountDeleteView(DeleteView): #CreateView, DetailView(Read이지만 장고에서는 Detail이다), DeleteView를 상속해서 기능이 추가된 새로운 뷰를 정의하는 것이다.
     model = User
+    context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:login')
     template_name = 'accountapp/delete.html'
     
@@ -86,7 +88,7 @@ class AccountDeleteView(DeleteView): #CreateView, DetailView(Read이지만 장�
 #여기서 만들고 최초 폴더의 urls.py에서 라우팅
 
 # !! View 만드는 순서 : 
-# 1. View.py에 class나 function 만들기
+# 1. View.py에 class나 function 만들기 (template_name 등 추가)
 # 2. urls.py에 path 추가하기
 # 3. template 폴더에서 html 파일 작성하기
 
