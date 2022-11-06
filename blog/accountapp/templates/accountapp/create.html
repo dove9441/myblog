@@ -10,7 +10,7 @@
             {% csrf_token %}
             <!--{{ form }}--> <!--views.py의 AccountCreateview 클래스의 UserCreationForm을 그대로 불러온다.-->
             {% bootstrap_form form %}
-            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="가입하기">
         </form>
     </div>
 {% endblock %}
