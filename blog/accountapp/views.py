@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse #추가해야 한다
 from django.http import HttpResponseRedirect #이것도 따로 해야 한다..
+from django.http import HttpResponseForbidden
 from django.urls import reverse, reverse_lazy
 
 
@@ -19,29 +20,33 @@ from accountapp.forms import AccountUpdateForm
 # Create your views here. 
 
 def hello_world(request):
-    #return HttpResponse("hello world!") #HttpResponse를 직접 리턴
-    #form의 method 값 get/post 따라서 요청을 나눈다
-    if request.method=="POST":
-        temp = request.POST.get('hello_world_input') #request의 post 요청 (하지만 대문자로 써야 한다)에서  input 태그의 name속성값이 hello_world_input인 것의 데이터를 가져와라
-        
-        
-        #DB에 저장하기 
-        new_hello_world = HelloWorld() #인스턴스 생성 (객체 타입은 HelloWorld이다)
-        new_hello_world.text = temp
-        new_hello_world.save() #DB에 new_hello_world 인스턴스를 저장
-        
-        #DB에서 불러오기
-        
-        hello_world_list = HelloWorld.objects.all() #HelloWorld 클래스 타입 내장 기본 함수여서 HelloWorld.을 쓰나보다?
-        
-        return HttpResponseRedirect(reverse('accountapp:hello_world')) #/accountapp/urls.py의 app_name을 입력하면 알아서 urlpatterns의 경로를 참고하여 account/hello_world로 변환된다.
     
-    
-        #return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
-    else:
-        hello_world_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list}) #/accountapp/hello_world가 아니다. 앞에 /는 꼭 빼야 한다 context는 보내줄 데이터다
+    # 로그인 인증
+    if request.user.is_authenticated:
+        #return HttpResponse("hello world!") #HttpResponse를 직접 리턴
+        #form의 method 값 get/post 따라서 요청을 나눈다
+        if request.method=="POST":
+            temp = request.POST.get('hello_world_input') #request의 post 요청 (하지만 대문자로 써야 한다)에서  input 태그의 name속성값이 hello_world_input인 것의 데이터를 가져와라
 
+
+            #DB에 저장하기 
+            new_hello_world = HelloWorld() #인스턴스 생성 (객체 타입은 HelloWorld이다)
+            new_hello_world.text = temp
+            new_hello_world.save() #DB에 new_hello_world 인스턴스를 저장
+
+            #DB에서 불러오기
+
+            hello_world_list = HelloWorld.objects.all() #HelloWorld 클래스 타입 내장 기본 함수여서 HelloWorld.을 쓰나보다?
+
+            return HttpResponseRedirect(reverse('accountapp:hello_world')) #/accountapp/urls.py의 app_name을 입력하면 알아서 urlpatterns의 경로를 참고하여 account/hello_world로 변환된다.
+
+
+            #return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
+        else:
+            hello_world_list = HelloWorld.objects.all()
+            return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list}) #/accountapp/hello_world가 아니다. 앞에 /는 꼭 빼야 한다 context는 보내줄 데이터다
+    else:
+        return HttpResponseRedirect(reverse('accountapp:login')) #로그인되어있지 않으면 로그인 창으로 리다이렉트
     
     
     
@@ -69,6 +74,20 @@ class AccountUpdateView(UpdateView):
     success_url = reverse_lazy('accountapp:hello_world') 
     template_name = 'accountapp/update.html'
     
+    def get(self, *args, **kwargs): #기본 함수에는 요청 종류에 따라 처리하는 get,post가 있다
+        if self.request.user.is_authenticated and self.get_object() == self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+        	return HttpResponseForbidden()
+        
+    def post(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object() == self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+        	return HttpResponseForbidden()
+        
+        
+    
     
     
 class AccountDeleteView(DeleteView): #CreateView, DetailView(Read이지만 장고에서는 Detail이다), DeleteView를 상속해서 기능이 추가된 새로운 뷰를 정의하는 것이다.
@@ -77,6 +96,17 @@ class AccountDeleteView(DeleteView): #CreateView, DetailView(Read이지만 장�
     success_url = reverse_lazy('accountapp:login')
     template_name = 'accountapp/delete.html'
     
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object() == self.request.user: #self는 자체 View를 의미. self.get_object()는 현재 로그인되어있는 객체 
+            return super().get(*args, **kwargs)
+        else:
+        	return HttpResponseForbidden()
+        
+    def post(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object() == self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+        	return HttpResponseForbidden()
 
     
     
