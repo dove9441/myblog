@@ -30,7 +30,7 @@ has_ownership=[login_required,account_ownership_required]
 
 
 
-@login_required
+@login_required #모듈을 통해 불러온다
 def hello_world(request):
     
     # 로그인 인증
