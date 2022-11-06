@@ -19,4 +19,5 @@ from django.urls import path, include #include 추가
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accountapp.urls')), # ,까지 
+    path('profiles/', include('profileapp.urls')),
 ]

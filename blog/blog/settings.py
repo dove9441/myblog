@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accountapp', #여기서 startapp으로 추가한 앱을 추가해야 한다. 마지막 ,도.
     'bootstrap4', #부트스트랩 설치 후 적기
+    'profileapp',  ##python manage.py startapp "앱 이름" 생성 후 적기
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,4 @@ LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login') #로그아웃 시 윗줄�
 
 MEDIA_URL = '/media/' #주소창에서 접근하는 경로
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #파이썬 파일에서 접근하는 경로
+
