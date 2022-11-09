@@ -100,6 +100,12 @@ class AccountDeleteView(DeleteView): #CreateView, DetailView(Read이지만 장�
     template_name = 'accountapp/delete.html'
     
     
+    
+    
+    
+    
+###################PROFILEAPP##########################
+    
 
     
     
@@ -109,6 +115,15 @@ class AccountDeleteView(DeleteView): #CreateView, DetailView(Read이지만 장�
 #처음 이렇게 만들고 root에서 setting.py에서 템플릿 경로 추가
 #렌더링할 html경로를 적어주는 것
 #여기서 만들고 최초 폴더의 urls.py에서 라우팅
+
+# 1. 앱 만들기 (python manage.py startapp '앱 이름')
+# 2. settings.py에 앱 추가
+# 3. urls.py(프로젝트 폴더)에서 경로 지정
+# 4. 앱 내부에 urls.py 만들기
+# 5. 모델 만들기
+# 6. form 만들기
+# 7. python manage.py makemigrations 이후 python manage.py migrate를 해줘야 db와 연동이 된다.
+# 8. View 만들기
 
 # !! View 만드는 순서 : 
 # 1. View.py에 class나 function 만들기 (template_name 등 추가)

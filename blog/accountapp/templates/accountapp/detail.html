@@ -7,9 +7,24 @@
         <p>
             {{ target_user.date_joined }}
         </p>
+        
+        {% if target_user.profile %}
+        
+        
+        
         <h2 style="font-family: 'NanumSqureB">
-            {{ target_user.username }} 
+            {{ target_user.profile.nickname }} 
         </h2>
+         {% else %}
+        <a href="{% url 'profileapp:create' %}">
+            <h2 style="font-family: 'NanumSqureB">
+            Create Profile
+        </h2>
+        </a>
+        {% endif %}
+        
+        
+        
         {% if target_user == user %} <!-- target_user가 현재 접속한 user라면 (target_user는 views.py의 AccountDetailView에 있다)-->
         <a href="{% url 'accountapp:update' pk=user.pk %}">
         	<p>
