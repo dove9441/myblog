@@ -12,7 +12,7 @@ class ProfileCreateView(CreateView):
     model = Profile
     context_object_name = 'target_profile'
     form_class = ProfileCreationForm
-    success_url = reverse_lazy("accountapp:hello_world")
+    #success_url = reverse_lazy("accountapp:detail")
     template_name = 'profileapp/create.html' 
     
     
@@ -25,7 +25,14 @@ class ProfileCreateView(CreateView):
         temp_profile.save()
         return super().form_valid(form) #이렇게 하면 models에서 정의했던 멤버변수 user를 입력받지 않아서 생기는 오류가 해결됨 근데 왜 해결되지??
     
+    
+    #ProfileCreation 이후 url에 pk를 같이 넘겨주기 위해 내장 함수를 수정
+    def get_success_url(self):
+        return reverse_lazy('accountapp:detail', kwargs={'pk' : self.object.user.pk})
+    
+    
 
+    
 @method_decorator(profile_ownership_required,'get')
 @method_decorator(profile_ownership_required,'post')
 class ProfileUpdateView(UpdateView): #사실 Update는 기존 내용 수정이기 때문에 CreateView와 거의 유사하다.
@@ -34,3 +41,6 @@ class ProfileUpdateView(UpdateView): #사실 Update는 기존 내용 수정이�
     form_class = ProfileCreationForm #이것도 그대로 쓴다 
     success_url = reverse_lazy("accountapp:hello_world")
     template_name = 'profileapp/update.html'
+    
+    def get_success_url(self):
+        return reverse_lazy('accountapp:detail', kwargs={'pk' : self.object.user.pk})

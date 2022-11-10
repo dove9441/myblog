@@ -8,33 +8,47 @@
             {{ target_user.date_joined }}
         </p>
         
-        <!-- 이미지 넣기 -->
-        <img src="{{ target_user.profile.image.url }}" alt="프로필 사진" style="width:12rem; height:12rem; border-radius:20rem; margin-bottom:2rem;"> 
-        <!--이렇게 하고 urls.py(root의)에서 미디어 라우팅을 해야 사진이 제대로 뜸--> 
-        
-        
-        
         <!-- 프로파일 존재하면 닉네임 띄우고 아니면 프로파일 생성으로 유도-->
         {% if target_user.profile %}
-        
-        <h2 style="font-family: 'NanumSqureB">
-            {{ target_user.profile.nickname }}
-            <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-            edit
-            </a>
-        </h2>
-         {% else %}
-        <a href="{% url 'profileapp:create' %}">
+
+
+        <!-- 이미지 넣기 -->
+            <img src="{{ target_user.profile.image.url }}" alt="프로필 사진" style="width:12rem; height:12rem; border-radius:20rem; margin-bottom:2rem;"> 
+            <!--이렇게 하고 urls.py(root의)에서 미디어 라우팅을 해야 사진이 제대로 뜸--> 
+
             <h2 style="font-family: 'NanumSqureB">
-            Create Profile
-        </h2>
-        </a>
+                {{ target_user.profile.nickname }}
+                {% if target_user == user %} <!--로그인된 사용자라면 보여주기 위해-->
+                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    edit
+                    </a>
+                {% endif %}
+
+            </h2>
+                    <!-- 한줄소개 표시-->
+            <h5 style="margin-bottom:3rem;">
+            {{ target_user.profile.message }}
+            </h5>
+        {% else %}
+
+            {% if target_user == user %} <!--로그인된 사용자라면 보여주기 위해-->
+                <a href="{% url 'profileapp:create' %}">
+                    <h2 style="font-family: 'NanumSqureB">
+                    Create Profile
+                </h2>
+                </a>
+        
+            {% else %}
+                <h2>
+                작성된 소개가 없습니다.    
+                </h2>
+        
+        
+            {% endif %}
+
+
         {% endif %}
         
-        <!-- 한줄소개 표시-->
-        <h5 style="margin-bottom:3rem;">
-        {{ target_user.profile.message }}
-        </h5>
 
         
         
