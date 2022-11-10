@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include #include 추가
+#미디어 라우팅을 위한 import 
+from django.conf.urls.static import static #static 안의 static이다
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accountapp.urls')), # ,까지 
-    path('profiles/', include('profileapp.urls')),
-]
+    path('profile/', include('profileapp.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -83,3 +83,16 @@ Not Found: /
 [07/Nov/2022 10:14:07] "GET / HTTP/1.1" 404 2280
 Not Found: /favicon.ico
 [07/Nov/2022 10:14:08] "GET /favicon.ico HTTP/1.1" 404 2331
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+accountapp.HelloWorld: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the AccountappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 1 issue (0 silenced).
+[09/Nov/2022 14:38:14] "GET /accounts/login/ HTTP/1.1" 200 4667
+Not Found: /
+[10/Nov/2022 10:21:23] "GET /?fbclid=PAAaYna70tkyZV_YSLsz0WNQV7SeZeoSgV98A0ZUcW_EQPEMXG9y1Megq9_2I HTTP/1.1" 404 2474
+Not Found: /
+[10/Nov/2022 10:21:27] "GET /?fbclid=PAAaYna70tkyZV_YSLsz0WNQV7SeZeoSgV98A0ZUcW_EQPEMXG9y1Megq9_2I HTTP/1.1" 404 2474

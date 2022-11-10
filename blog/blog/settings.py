@@ -141,3 +141,25 @@ LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login') #로그아웃 시 윗줄�
 MEDIA_URL = '/media/' #주소창에서 접근하는 경로
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #파이썬 파일에서 접근하는 경로
 
+
+
+#처음 이렇게 만들고(앱 내부의 views.py) root에서 setting.py에서 템플릿 경로 추가
+#렌더링할 html경로를 적어주는 것
+#여기서 만들고 최초 폴더의 urls.py에서 라우팅
+
+# 1. 앱 만들기 (python manage.py startapp '앱 이름')
+# 2. settings.py에 앱 추가
+# 3. urls.py(프로젝트 폴더)에서 경로 지정
+# 4. 앱 내부에 urls.py 만들기
+# 5. 모델 만들기
+# 6. form 만들기
+# 7. python manage.py makemigrations 이후 python manage.py migrate를 해줘야 db와 연동이 된다.
+# 8. View 만들기
+
+# !! View 만드는 순서 : 
+# 1. View.py에 class나 function 만들기 (template_name 등 추가)
+# 2. urls.py에 path 추가하기
+# 3. template 폴더에서 html 파일 작성하기
+
+
+
