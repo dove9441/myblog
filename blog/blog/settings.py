@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accountapp', #여기서 startapp으로 추가한 앱을 추가해야 한다. 마지막 ,도.
     'bootstrap4', #부트스트랩 설치 후 적기
     'profileapp',  ##python manage.py startapp "앱 이름" 생성 후 적기
+    'articleapp',
 ]
 
 MIDDLEWARE = [

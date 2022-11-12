@@ -96,3 +96,31 @@ Not Found: /
 [10/Nov/2022 10:21:23] "GET /?fbclid=PAAaYna70tkyZV_YSLsz0WNQV7SeZeoSgV98A0ZUcW_EQPEMXG9y1Megq9_2I HTTP/1.1" 404 2474
 Not Found: /
 [10/Nov/2022 10:21:27] "GET /?fbclid=PAAaYna70tkyZV_YSLsz0WNQV7SeZeoSgV98A0ZUcW_EQPEMXG9y1Megq9_2I HTTP/1.1" 404 2474
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+accountapp.HelloWorld: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the AccountappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 1 issue (0 silenced).
+Not Found: /articles
+[12/Nov/2022 04:46:29] "GET /articles HTTP/1.1" 404 2557
+Not Found: /favicon.ico
+[12/Nov/2022 04:46:29] "GET /favicon.ico HTTP/1.1" 404 2566
+[12/Nov/2022 04:46:46] "GET /articles/list HTTP/1.1" 301 0
+[12/Nov/2022 04:46:46] "GET /articles/list/ HTTP/1.1" 200 4432
+[12/Nov/2022 04:46:46] "GET /static/js/magicgrid.js HTTP/1.1" 200 6304
+[12/Nov/2022 04:46:46] "GET /static/base.css HTTP/1.1" 304 0
+[12/Nov/2022 04:46:46] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+[12/Nov/2022 04:46:51] "GET /articles/list/ HTTP/1.1" 200 4432
+[12/Nov/2022 04:46:58] "GET /accounts/login/?next=/articles/list/ HTTP/1.1" 200 4697
+[12/Nov/2022 04:47:07] "POST /accounts/login/ HTTP/1.1" 302 0
+[12/Nov/2022 04:47:08] "GET /accounts/hello_world/ HTTP/1.1" 200 6895
+[12/Nov/2022 04:47:12] "GET /accounts/detail/5 HTTP/1.1" 200 4659
+[12/Nov/2022 04:47:14] "GET /media/profile/moon_81ApGTT.jpeg HTTP/1.1" 200 4915
+[12/Nov/2022 04:47:21] "GET /profiles/update/1 HTTP/1.1" 200 5270
+[12/Nov/2022 04:47:30] "POST /profiles/update/1 HTTP/1.1" 302 0
+[12/Nov/2022 04:47:30] "GET /accounts/detail/5 HTTP/1.1" 200 4655
+[12/Nov/2022 04:47:34] "GET /profiles/update/1 HTTP/1.1" 200 5262
+[12/Nov/2022 04:48:12] "GET /articles/list/ HTTP/1.1" 200 4402
