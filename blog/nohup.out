@@ -124,3 +124,27 @@ Not Found: /favicon.ico
 [12/Nov/2022 04:47:30] "GET /accounts/detail/5 HTTP/1.1" 200 4655
 [12/Nov/2022 04:47:34] "GET /profiles/update/1 HTTP/1.1" 200 5262
 [12/Nov/2022 04:48:12] "GET /articles/list/ HTTP/1.1" 200 4402
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+accountapp.HelloWorld: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the AccountappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 1 issue (0 silenced).
+[12/Nov/2022 14:51:06] "GET /articles/detail/3 HTTP/1.1" 200 3602
+[12/Nov/2022 14:51:07] "GET /static/base.css HTTP/1.1" 200 276
+[12/Nov/2022 14:51:08] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 200 1915795
+[12/Nov/2022 14:51:08] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+Not Found: /favicon.ico
+[12/Nov/2022 14:51:09] "GET /favicon.ico HTTP/1.1" 404 2566
+Not Found: /
+[13/Nov/2022 00:07:11] "GET /?fbclid=PAAaakyXprvb4jU7O8XHXMK3ev2hmm8Xc1FJACPT5pVoPqvD4A9_y6soKqiyg HTTP/1.1" 404 2584
+Not Found: /favicon.ico
+[13/Nov/2022 00:07:11] "GET /favicon.ico HTTP/1.1" 404 2566
+[13/Nov/2022 00:09:04] "GET /articles/detail/2 HTTP/1.1" 200 3537
+[13/Nov/2022 00:09:04] "GET /static/base.css HTTP/1.1" 200 276
+[13/Nov/2022 00:09:05] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+[13/Nov/2022 00:09:05] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_ZlPNzTi.jpeg HTTP/1.1" 200 5397
+Not Found: /favicon.ico
+[13/Nov/2022 00:09:05] "GET /favicon.ico HTTP/1.1" 404 2566

@@ -15,3 +15,7 @@ class Profile(models.Model):
     #모델을 만들었으면 python manage.py makemigrations 이후 python manage.py migrate를 해줘야 db와 연동이 된다.
     #이후 View를 만들면 된다
     
+    
+
+
+    
