@@ -22,7 +22,7 @@
         .container .item11 { height: 400px; } */
     </style>
     
-    <div class="container">
+    <!-- <div class="container">
         <div class="item1"><img src="https://picsum.photos/200/300" alt="#"></div>
         <div class="item1"><img src="https://picsum.photos/200/340" alt="#"></div>
         <div class="item1"><img src="https://picsum.photos/200/260" alt="#"></div>
@@ -35,17 +35,35 @@
         <div class="item1"><img src="https://picsum.photos/200/320" alt="#"></div>
         <div class="item1"><img src="https://picsum.photos/200/290" alt="#"></div>
         <div class="item1"><img src="https://picsum.photos/200/260" alt="#"></div>
+    </div> -->
+
+    {% if article_list %} <!--article_list가 존재한다면-->
+    <div class="container">
+        {% for article in article_list %} <!-- view에서 context_object_name이다-->    
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+        </a>
+        {% endfor %}
     </div>
+    <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스가 js 내부에서 정의되므로 (html이 js에 의존적이므로)안에다가 넣어준다-->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+    
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+    
 
-
-
-    <div  style="text-align:center;">
+    <div style="text-align:center;">
         <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
         새 글 작성하기
         </a>
     </div>
 
-    <script src="{% static 'js/magicgrid.js' %}"></script>
+
 
 
 

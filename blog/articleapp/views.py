@@ -38,6 +38,7 @@ class ArticleDetailView(DetailView):
 @method_decorator(article_ownership_required, 'get')
 @method_decorator(article_ownership_required, 'post')
 class ArticleUpdateView(UpdateView):
+    
     model = Article
     form_class = ArticleCreationForm
     template_name = 'articleapp/update.html'
@@ -58,3 +59,9 @@ class ArticleDeleteView(DeleteView):
     
     #제발 View 만들면 urls.py에서 만들자
     
+    
+class ArticleListView(ListView):
+    model = Article
+    context_object_name = 'article_list'
+    tamplate_name = 'articleapp/list.html'
+    paginate_by = 25 #paginate_by는 한 목록에 몇 개의 글을 보여줄지를 결정한다.
