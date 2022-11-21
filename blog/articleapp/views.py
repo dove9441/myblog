@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from articleapp.forms import *
 from articleapp.decorators import *
+from django.views.generic.edit import FormMixin
+from commentapp.forms import *
 
 
 # Create your views here.
@@ -26,10 +28,11 @@ class ArticleCreateView(CreateView):
         return reverse_lazy('articleapp:detail', kwargs={'pk' : self.object.pk}) #왜 profileapp에서는 reverse_lazy를 썼는데 상관없나? 또 pk=에서 self.object.user.pk가 아닌 자체 pk를 썼을까
     
     
-class ArticleDetailView(DetailView):
+class ArticleDetailView(DetailView, FormMixin): #detailview에서 comment의 form을 같이 사용하기 때문에 다중상속
     model = Article
     template_name = 'articleapp/detail.html'
     context_object_name = 'target_article'
+    form_class = CommentCreationForm #다중상속을 통해 가져올 수 있음 물론 import 필요
     
     
     

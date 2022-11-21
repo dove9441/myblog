@@ -16,10 +16,7 @@
             width:100%;
             border-radius:1rem;
         }
-        /* .container .item1 { height: 200px; }
-        .container .item4 { height: 800px; }
-        .container .item6 { height: 600px; }
-        .container .item11 { height: 400px; } */
+        
     </style>
     
     <!-- <div class="container">
@@ -45,7 +42,7 @@
         </a>
         {% endfor %}
     </div>
-    <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스가 js 내부에서 정의되므로 (html이 js에 의존적이므로)안에다가 넣어준다-->
+     <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스를 js에서 사용하므로 안에다가 넣어준다-->
     {% else %}
     <div style="text-align:center;">
         <h1>
@@ -59,9 +56,10 @@
 
     <div style="text-align:center;">
         <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
-        새 글 작성하기
+        새 글 만들기
         </a>
     </div>
+
 
 
 

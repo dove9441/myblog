@@ -6,7 +6,7 @@
         <div class="mb-4">
             <h4>글 수정하기</h4>
         </div>
-        <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="post">
+        <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <!--{{ form }}--> <!--views.py의 AccountCreateview 클래스의 UserCreationForm을 그대로 불러온다.-->
             {% bootstrap_form form %}

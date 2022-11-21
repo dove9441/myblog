@@ -1,0 +1,24 @@
+<!-- extends base.html 없다 (이건 include되는 것이기 때문) -->
+{% load bootstrap4 %}
+
+{% block content %}
+	<div style="text-align:center; max-width:500px; margin:4rem auto;">
+        <div class="mb-4">
+            <h4>Comment</h4>
+        </div>
+        <form action="{% url 'commentapp:create' %}" method="post">
+            {% csrf_token %}
+            <!--{{ form }}--> <!--views.py의 AccountCreateview 클래스의 UserCreationForm을 그대로 불러온다.-->
+            {% bootstrap_form form %}
+            
+            
+            {% if user.is_authenticated %}
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="저장">
+            {% else %}
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}"  class="btn btn-dark rounded-pill col-6 mt-3">로그인</a> <!-- 로그인하면 다시 돌아오게-->
+            {% endif %}
+            <input type="hidden" name="article_pk" value="{{ article.pk }}"> <!-- article을 articleapp의 detail.html에서 with로 보내줬다-->
+        </form>
+    </div>
+{% endblock %}
+

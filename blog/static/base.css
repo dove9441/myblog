@@ -22,3 +22,12 @@ font-family: 'Lobster', cursive;
     max-width:500px;
     margin:4rem auto;
 }
+
+img[src$=".gif"], img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]{
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}

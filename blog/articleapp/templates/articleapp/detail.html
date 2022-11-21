@@ -8,7 +8,11 @@
             {{ target_article.title }}
         </h1>
         <h5>
-            {{ target_article.writer.profile.nickname }}
+            {% if target_article.writer.profile %}
+                {{ target_article.writer.profile.nickname }}
+            {% else %}
+                {{ target_article.writer.username }}
+            {% endif %}
         </h5>
 
         <hr>
@@ -33,6 +37,9 @@
         {% endif %}
         
         <hr>
+        <!-- comment 부분-->
+        {% include 'commentapp/create.html' with article=target_article %}
+        
         
     </div>
 </div>
