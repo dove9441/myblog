@@ -416,3 +416,140 @@ Not Found: /favicon.ico
 [19/Nov/2022 01:52:35] "GET /favicon.ico HTTP/1.1" 404 2566
 [19/Nov/2022 01:52:44] "GET /articles/list/ HTTP/1.1" 200 7137
 [19/Nov/2022 01:52:46] "GET /articles/detail/6 HTTP/1.1" 200 3806
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+accountapp.HelloWorld: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the AccountappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 1 issue (0 silenced).
+[21/Nov/2022 03:48:41] "GET /articles/detail/1 HTTP/1.1" 200 5341
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'articleapp.models.Article'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[21/Nov/2022 03:48:42] "GET /articles/list/ HTTP/1.1" 200 6292
+[21/Nov/2022 03:48:46] "GET /articles/detail/1 HTTP/1.1" 200 5341
+[21/Nov/2022 03:48:53] "GET /articles/update/1 HTTP/1.1" 200 5322
+[21/Nov/2022 03:48:59] "POST /articles/update/1 HTTP/1.1" 302 0
+[21/Nov/2022 03:48:59] "GET /articles/detail/1 HTTP/1.1" 200 5340
+[21/Nov/2022 03:49:14] "GET /accounts/logout/?next=/articles/detail/1 HTTP/1.1" 302 0
+[21/Nov/2022 03:49:15] "GET /articles/detail/1 HTTP/1.1" 200 5207
+[21/Nov/2022 03:49:17] "GET /accounts/login/?next=/articles/detail/1 HTTP/1.1" 200 4757
+[21/Nov/2022 03:50:06] "GET /accounts/create/ HTTP/1.1" 200 6579
+[21/Nov/2022 03:50:32] "GET /admin HTTP/1.1" 301 0
+[21/Nov/2022 03:50:32] "GET /admin/ HTTP/1.1" 302 0
+[21/Nov/2022 03:50:32] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2214
+[21/Nov/2022 03:50:32] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+[21/Nov/2022 03:50:32] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+[21/Nov/2022 03:50:32] "GET /static/admin/css/login.css HTTP/1.1" 200 939
+[21/Nov/2022 03:50:32] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+[21/Nov/2022 03:50:32] "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+[21/Nov/2022 03:50:32] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[21/Nov/2022 03:50:32] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[21/Nov/2022 03:50:32] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[21/Nov/2022 03:50:39] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[21/Nov/2022 03:50:39] "GET /admin/ HTTP/1.1" 200 4077
+[21/Nov/2022 03:50:39] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21/Nov/2022 03:50:39] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21/Nov/2022 03:50:39] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[21/Nov/2022 03:50:39] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21/Nov/2022 03:50:39] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[21/Nov/2022 03:50:42] "GET /admin/auth/user/ HTTP/1.1" 200 8228
+[21/Nov/2022 03:50:42] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6874
+[21/Nov/2022 03:50:42] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[21/Nov/2022 03:50:42] "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+[21/Nov/2022 03:50:42] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[21/Nov/2022 03:50:42] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[21/Nov/2022 03:50:42] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+[21/Nov/2022 03:50:42] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+[21/Nov/2022 03:50:42] "GET /static/admin/js/actions.js HTTP/1.1" 200 7867
+[21/Nov/2022 03:50:42] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[21/Nov/2022 03:50:42] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[21/Nov/2022 03:50:42] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21/Nov/2022 03:50:42] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21/Nov/2022 03:50:43] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21/Nov/2022 03:50:43] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[21/Nov/2022 03:50:43] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[21/Nov/2022 03:50:44] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 16253
+[21/Nov/2022 03:50:44] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4360
+[21/Nov/2022 03:50:44] "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+[21/Nov/2022 03:50:44] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12350
+[21/Nov/2022 03:50:44] "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+[21/Nov/2022 03:50:44] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[21/Nov/2022 03:50:44] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19634
+[21/Nov/2022 03:50:44] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+[21/Nov/2022 03:50:44] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+[21/Nov/2022 03:50:44] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[21/Nov/2022 03:50:44] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[21/Nov/2022 03:50:44] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[21/Nov/2022 03:50:44] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[21/Nov/2022 03:50:44] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[21/Nov/2022 03:50:44] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[21/Nov/2022 03:50:47] "GET /admin/auth/user/ HTTP/1.1" 200 8228
+[21/Nov/2022 03:50:48] "GET /admin/auth/user/7/change/ HTTP/1.1" 200 16210
+[21/Nov/2022 03:50:48] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[21/Nov/2022 03:50:51] "GET /admin/auth/user/ HTTP/1.1" 200 8228
+[21/Nov/2022 03:50:52] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 16253
+[21/Nov/2022 03:50:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[21/Nov/2022 03:51:06] "GET /admin/auth/user/5/password/ HTTP/1.1" 200 4552
+[21/Nov/2022 03:51:09] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 16253
+[21/Nov/2022 03:55:10] "GET /accounts/create/ HTTP/1.1" 200 6741
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:55:11] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+[21/Nov/2022 03:55:33] "GET /accounts/create/ HTTP/1.1" 200 6741
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:55:33] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+Performing system checks...
+
+November 21, 2022 - 03:48:37
+Django version 3.2.16, using settings 'blog.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+accountapp.HelloWorld: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the AccountappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 1 issue (0 silenced).
+[21/Nov/2022 03:55:53] "GET /accounts/create/ HTTP/1.1" 200 6741
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:55:53] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+[21/Nov/2022 03:56:13] "GET /accounts/create/ HTTP/1.1" 200 6758
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:56:13] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+[21/Nov/2022 03:56:14] "GET /accounts/create/ HTTP/1.1" 200 6758
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:56:14] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+[21/Nov/2022 03:57:22] "GET /accounts/create/ HTTP/1.1" 200 6711
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:57:23] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+[21/Nov/2022 03:57:47] "GET /accounts/create/ HTTP/1.1" 200 6737
+Not Found: /accounts/create/pas.png
+[21/Nov/2022 03:57:47] "GET /accounts/create/pas.png HTTP/1.1" 404 3898
+[21/Nov/2022 10:48:20] "GET /articles/list?fbclid=PAAaZtPaceLhKeeyJOwS9d4wxaOzv6BwElC8VBQqH2he0CTcP35eSej4Eg-Rw HTTP/1.1" 301 0
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'articleapp.models.Article'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[21/Nov/2022 10:48:20] "GET /articles/list/?fbclid=PAAaZtPaceLhKeeyJOwS9d4wxaOzv6BwElC8VBQqH2he0CTcP35eSej4Eg-Rw HTTP/1.1" 200 6313
+[21/Nov/2022 10:48:20] "GET /static/base.css HTTP/1.1" 304 0
+[21/Nov/2022 10:48:21] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg HTTP/1.1" 304 0
+[21/Nov/2022 10:48:21] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 304 0
+[21/Nov/2022 10:48:21] "GET /media/article/catacatat.jpg HTTP/1.1" 304 0
+[21/Nov/2022 10:48:21] "GET /static/js/magicgrid.js HTTP/1.1" 304 0
+[21/Nov/2022 10:48:21] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 304 0
+[21/Nov/2022 10:48:23] "GET /articles/list/?fbclid=PAAaZtPaceLhKeeyJOwS9d4wxaOzv6BwElC8VBQqH2he0CTcP35eSej4Eg-Rw HTTP/1.1" 200 6313
+[21/Nov/2022 10:48:23] "GET /media/article/catacatat.jpg HTTP/1.1" 304 0
+[21/Nov/2022 10:48:23] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg HTTP/1.1" 304 0
+[21/Nov/2022 10:48:23] "GET /static/base.css HTTP/1.1" 304 0
+[21/Nov/2022 10:48:23] "GET /static/js/magicgrid.js HTTP/1.1" 304 0
+[21/Nov/2022 10:48:23] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 304 0
+[21/Nov/2022 10:48:23] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 304 0
+[26/Nov/2022 12:17:49] "GET /articles/list?fbclid=PAAaYHpEfTuywMmRmoYr3NhWGoK9jFo0jqycqiptz9QCetyyYKH5jTnBOMJLg HTTP/1.1" 301 0
+[26/Nov/2022 12:17:49] "GET /articles/list/?fbclid=PAAaYHpEfTuywMmRmoYr3NhWGoK9jFo0jqycqiptz9QCetyyYKH5jTnBOMJLg HTTP/1.1" 200 6313
+[26/Nov/2022 12:17:49] "GET /static/base.css HTTP/1.1" 200 633
+[26/Nov/2022 12:17:49] "GET /static/js/magicgrid.js HTTP/1.1" 200 6757
+[26/Nov/2022 12:17:49] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg HTTP/1.1" 200 5397
+[26/Nov/2022 12:17:50] "GET /media/article/catacatat.jpg HTTP/1.1" 200 803476
+[26/Nov/2022 12:17:50] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 200 1915795
+[26/Nov/2022 12:17:50] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584

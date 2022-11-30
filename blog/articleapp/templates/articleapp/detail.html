@@ -37,8 +37,17 @@
         {% endif %}
         
         <hr>
-        <!-- comment 부분-->
+        <!-- comment list 부분-->
+        {% for comment in target_article.comment.all %}
+            {% include 'commentapp/detail.html' with comment=comment %}
+        
+        {% endfor %}
+        
+
+        
+        <!-- comment create 부분-->
         {% include 'commentapp/create.html' with article=target_article %}
+
         
         
     </div>

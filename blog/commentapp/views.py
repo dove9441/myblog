@@ -2,10 +2,12 @@ from django.shortcuts import render
 from commentapp.models import *
 from commentapp.forms import *
 from django.urls import reverse_lazy
-from django.views.generic import *
+from django.views.generic import * #CreateView, DeleteView
 
 from articleapp.models import Article
 
+from django.utils.decorators import method_decorator
+from commentapp.decorators import *
 # Create your views here.
 
 
@@ -24,3 +26,15 @@ class CommentCreateView(CreateView):
     
     def get_success_url(self): 
         return reverse_lazy('articleapp:detail', kwargs={'pk':self.object.article.pk}) #self.object는 comment이다
+    
+    
+    
+@method_decorator(comment_ownership_required, 'get')
+@method_decorator(comment_ownership_required, 'post')
+class CommentDeleteView(DeleteView):
+    model = Comment
+    context_object_name = 'target_comment'
+    template_name = 'commentapp/delete.html'
+
+    def get_success_url(self): 
+        return reverse_lazy('articleapp:detail', kwargs={'pk':self.object.article.pk})
