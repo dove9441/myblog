@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'profileapp',  ##python manage.py startapp "앱 이름" 생성 후 적기
     'articleapp', #이후 urls.py에서 url 설정하기
     'commentapp',
+    'projectapp',
+    
 ]
 
 MIDDLEWARE = [

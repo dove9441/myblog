@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %} <!-- static 쓰려면 꼭 해줘야 함-->
+
+{% block content %}
+    <style>
+        
+        .container {
+            padding: 0;
+            margin:0, auto;
+        }
+        
+        
+        /* .container a{
+            width: 45%;
+            max-width: 250px;
+        } 스타일은 articleapp의 list.html에서 가져온다. 하지만 이 스타일에서는 고정된 너비를 사용
+        원래 a태그 안에 이미지가 있으나 이제는 이미지 크기를 직접 조정
+        */
+        
+        .container div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1rem;
+        }
+        
+        .container img {
+            width:7rem;
+            height:7rem;
+            object-fit:cover;
+            border-radius:1rem;
+        }
+        
+    </style>
+    {% if project_list %} <!--article_list가 존재한다면-->
+    <div class="container">
+        {% for project in project_list %} <!-- view에서 context_object_name이다-->    
+        <a href="{% url 'projectapp:detail' pk=project.pk %}">
+            {% include 'snippets/project_card.html' with project=project %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+        </a>
+        {% endfor %}
+    </div>
+     <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스를 js에서 사용하므로 안에다가 넣어준다-->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+    
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+    
+
+    <div style="text-align:center;">
+        <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill px-3 mt-3 mb-3">
+        새 글 작성하기
+        </a>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

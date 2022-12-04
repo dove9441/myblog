@@ -37,3 +37,15 @@ img[src$=".gif"], img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]{
         font-size:13px;
     }
 }
+
+
+a {
+    color:black;
+    text-decoration:none;
+}
+
+a:hover {
+    color:black;
+    text-decoration:none;
+}
+
