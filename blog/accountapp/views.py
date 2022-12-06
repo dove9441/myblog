@@ -28,6 +28,9 @@ from accountapp.decorators import *
 # decorator 배열
 has_ownership=[login_required,account_ownership_required]
 
+#MultipleObjectMixin
+from django.views.generic.list import MultipleObjectMixin
+from articleapp.models import Article
 
 
 @login_required #모듈을 통해 불러온다
@@ -69,10 +72,16 @@ class AccountCreateView(CreateView):
     
     
     
-class AccountDetailView(DetailView):
+class AccountDetailView(DetailView,MultipleObjectMixin):
     model = User #U 대문자이다..
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+    
+    paginate_by = 25
+    
+    def get_context_data(self, **kwargs):
+        object_list = Article.objects.filter(writer=self.get_object()) #해당 project에 속해있는 articles를 가져오는 건데 이해는 잘 안 된다. Accountapp에서는 해당 account의 게시물이다.
+        return super(AccountDetailView,self).get_context_data(object_list=object_list,**kwargs)
     
 
 

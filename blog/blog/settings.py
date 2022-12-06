@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'articleapp', #이후 urls.py에서 url 설정하기
     'commentapp',
     'projectapp',
+    'subscribeapp',
     
 ]
 

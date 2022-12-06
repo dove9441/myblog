@@ -20,9 +20,10 @@
         <img src="{{ target_article.image.url }}" alt="#" style="width:100%; border-radius:1rem; margin:2rem 0;">
 
 
-        <p>
-            {{ target_article.content }}
-        </p>
+        <div style="text-align: left;">
+            
+            {{ target_article.content | safe }} <!-- | safe 하면 태그 텍스트는 사라짐-->
+        </div>
 
 
 

@@ -305,4 +305,4 @@ for(let i=0; i<masonrys.length;i++){
 
 
 
-MagicGrid.listen(); // 대소문자 구분 잘 하자..
+magicGrid.listen(); 

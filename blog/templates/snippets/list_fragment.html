@@ -1,0 +1,58 @@
+{% load static %}    
+<style>
+        
+        .container {
+            padding: 0;
+            margin:0, auto;
+        }
+        
+        
+        .container a{
+            width: 45%;
+            max-width: 250px;
+        }
+        
+        .container div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1rem;
+        }
+        
+        .container img {
+            width:100%;
+            border-radius:1rem;
+        }
+        
+    </style>
+    
+  
+    {% if article_list %} <!--article_list가 존재한다면-->
+
+    <div class="container">
+        {% for article in article_list %} <!-- view에서 context_object_name이다-->    
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+        </a>
+        {% endfor %}
+    </div>
+<script src="{% static 'js/magicgrid.js' %}"></script>
+      <!-- container라는 클래스를 js에서 사용하므로 안에다가 넣어준다-->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+    
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+    
+
+    <div style="text-align:center;">
+        <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill px-3 mt-3 mb-3">
+        새 글 작성하기
+        </a>
+    </div>
+
+
