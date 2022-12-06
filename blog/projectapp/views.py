@@ -34,7 +34,8 @@ class ProjectDetailView(DetailView, MultipleObjectMixin): #믹스인 사용
         
         if user.is_authenticated:
             subscription = Subscription.objects.filter(user=user,project=project)
-            
+        else:
+            subscription = None
         object_list = Article.objects.filter(project=self.get_object()) #해당 project에 속해있는 articles를 가져오는 건데 이해는 잘 안 된다.
         return super(ProjectDetailView,self).get_context_data(object_list=object_list,
                                                               subscription=subscription,

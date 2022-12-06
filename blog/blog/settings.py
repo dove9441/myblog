@@ -138,7 +138,7 @@ STATICFILES_DIRS = [
                    ] 
 
 
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login') #로그아웃 시 윗줄의 LOGIN_REDIRECT_URL로 이동. 여기서 또 hello_world로 이동한다. 결국 로그인, 로그아웃 시 모두 hello_world로 이동.
 
 

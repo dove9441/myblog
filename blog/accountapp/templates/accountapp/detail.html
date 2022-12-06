@@ -19,11 +19,9 @@
             <h2 style="font-family: 'NanumSqureB;">
                 {{ target_user.profile.nickname }}
                 {% if target_user == user %} <!--로그인된 사용자라면 보여주기 위해-->
-                <div class="btn btn-light rounded-pill">
-                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                    수정
-                    </a>
-                </div>
+            <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" class="material-icons" style="box-shadow:0 0 4px #ccc; border-radius:10rem; padding: .4rem;">
+                    edit <!-- a태그 안의 내용에 따라서 아이콘의 종류가 바뀐다. 클래스는 material-icons 고정이다. 하위 요소에 태그는 없어야 한다.-->
+            </a>
                 {% endif %}
 
             </h2>
@@ -53,23 +51,17 @@
         
 
         
-        
-        
-        
-        
         {% if target_user == user %} <!-- target_user가 현재 접속한 user라면 (target_user는 views.py의 AccountDetailView에 있다)-->
-        <a href="{% url 'accountapp:update' pk=user.pk %}">
-        	<p>
-                Change Info
-            </p>
+        <a class="material-icons" style="box-shadow:0 0 4px #ccc; border-radius:10rem; padding: .4rem;" href="{% url 'accountapp:update' pk=user.pk %}">
+                settings <!-- 모두 소문자이다 -->
         </a>
-        <a href="{% url 'accountapp:delete' pk=user.pk %}">
-        	<p>
-                Quit
-            </p>
+        <a class="material-icons" style="box-shadow:0 0 4px #fcc; border-radius:10rem; padding: .4rem;" href="{% url 'accountapp:delete' pk=user.pk %}">
+                cancel
         </a>
         {% endif %}
     </div>
+    
+    <br>
     
      <!-- 해당 계정의 글 목록을 보여주기-->
     <div>

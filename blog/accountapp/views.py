@@ -6,7 +6,7 @@ from django.urls import reverse, reverse_lazy
 
 
 # 모델도 import해야 한다.
-from accountapp.models import HelloWorld
+#from accountapp.models import HelloWorld
 
 # CRUD View class 이용한 CreateView 만들기
 from django.views.generic import *  #CreateView, DetailView 등 불러오기
@@ -33,32 +33,32 @@ from django.views.generic.list import MultipleObjectMixin
 from articleapp.models import Article
 
 
-@login_required #모듈을 통해 불러온다
-def hello_world(request):
+# @login_required #모듈을 통해 불러온다
+# def hello_world(request):
     
-    # 로그인 인증
-   	#return HttpResponse("hello world!") #HttpResponse를 직접 리턴
-        #form의 method 값 get/post 따라서 요청을 나눈다
-    if request.method=="POST":
-        temp = request.POST.get('hello_world_input') #request의 post 요청 (하지만 대문자로 써야 한다)에서  input 태그의 name속성값이 hello_world_input인 것의 데이터를 가져와라
+#     # 로그인 인증
+#    	#return HttpResponse("hello world!") #HttpResponse를 직접 리턴
+#         #form의 method 값 get/post 따라서 요청을 나눈다
+#     if request.method=="POST":
+#         temp = request.POST.get('hello_world_input') #request의 post 요청 (하지만 대문자로 써야 한다)에서  input 태그의 name속성값이 hello_world_input인 것의 데이터를 가져와라
 
 
-        #DB에 저장하기 
-        new_hello_world = HelloWorld() #인스턴스 생성 (객체 타입은 HelloWorld이다)
-        new_hello_world.text = temp
-        new_hello_world.save() #DB에 new_hello_world 인스턴스를 저장
+#         #DB에 저장하기 
+#         new_hello_world = HelloWorld() #인스턴스 생성 (객체 타입은 HelloWorld이다)
+#         new_hello_world.text = temp
+#         new_hello_world.save() #DB에 new_hello_world 인스턴스를 저장
 
-        #DB에서 불러오기
+#         #DB에서 불러오기
 
-        hello_world_list = HelloWorld.objects.all() #HelloWorld 클래스 타입 내장 기본 함수여서 HelloWorld.을 쓰나보다?
+#         hello_world_list = HelloWorld.objects.all() #HelloWorld 클래스 타입 내장 기본 함수여서 HelloWorld.을 쓰나보다?
 
-        return HttpResponseRedirect(reverse('accountapp:hello_world')) #/accountapp/urls.py의 app_name을 입력하면 알아서 urlpatterns의 경로를 참고하여 account/hello_world로 변환된다.
+#         return HttpResponseRedirect(reverse('accountapp:hello_world')) #/accountapp/urls.py의 app_name을 입력하면 알아서 urlpatterns의 경로를 참고하여 account/hello_world로 변환된다.
 
 
-        #return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
-    else:
-        hello_world_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list}) #/accountapp/hello_world가 아니다. 앞에 /는 꼭 빼야 한다 context는 보내줄 데이터다
+#         #return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
+#     else:
+#         hello_world_list = HelloWorld.objects.all()
+#         return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list}) #/accountapp/hello_world가 아니다. 앞에 /는 꼭 빼야 한다 context는 보내줄 데이터다
 
     
 

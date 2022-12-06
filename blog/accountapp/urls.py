@@ -9,7 +9,7 @@ app_name='accountapp' #하면 좋음. 계속 쳐야 하니 그냥 이름 변수�
 
 
 urlpatterns = [
-    path('hello_world/', hello_world, name='hello_world'),
+    #path('hello_world/', hello_world, name='hello_world'),
     
     path('login/', LoginView.as_view(template_name='accountapp/login.html'), name='login'), #로그인 view는 따로 템플릿 설정. 괄호 위치 주의. 
     path('logout/', LogoutView.as_view(), name='logout'), #로그아웃 뷰는 없어도 됨.
