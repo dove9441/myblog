@@ -2,6 +2,18 @@
 {% load bootstrap4 %}
 
 {% block content %}
+<!-- WYSIWYG -->
+<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+<style>
+.medium-editor-element {
+    word-wrap: break-word;
+    min-height: 100px;
+}
+</style> <!-- 내장 스타일 오버라이딩-->
+
+
 	<div style="text-align:center; max-width:500px; margin:4rem auto;">
         <div class="mb-4">
             <h4>Comment</h4>
@@ -20,5 +32,7 @@
             <input type="hidden" name="article_pk" value="{{ article.pk }}"> <!-- article을 articleapp의 detail.html에서 with로 보내줬다-->
         </form>
     </div>
+
+<script>var editor = new MediumEditor('.editable');</script>
 {% endblock %}
 

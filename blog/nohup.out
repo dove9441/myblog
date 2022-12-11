@@ -553,3 +553,507 @@ Not Found: /accounts/create/pas.png
 [26/Nov/2022 12:17:50] "GET /media/article/catacatat.jpg HTTP/1.1" 200 803476
 [26/Nov/2022 12:17:50] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 200 1915795
 [26/Nov/2022 12:17:50] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+Watching for file changes with StatReloader
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'articleapp.models.Article'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[07/Dec/2022 14:57:57] "GET /articles/list/ HTTP/1.1" 200 8952
+[07/Dec/2022 14:57:57] "GET /static/base.css HTTP/1.1" 304 0
+[07/Dec/2022 14:57:58] "GET /articles/list/ HTTP/1.1" 200 8952
+[07/Dec/2022 14:57:58] "GET /articles/list/ HTTP/1.1" 200 8952
+[07/Dec/2022 14:58:00] "GET /articles/detail/3 HTTP/1.1" 200 6517
+Internal Server Error: /comments/delete/5
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/workspace/git_repo_practice/blog/commentapp/decorators.py", line 9, in decorated
+    comment = Comment.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+NameError: name 'Comment' is not defined
+[07/Dec/2022 14:58:02] "GET /comments/delete/5 HTTP/1.1" 500 84567
+Internal Server Error: /comments/delete/5
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/workspace/git_repo_practice/blog/commentapp/decorators.py", line 9, in decorated
+    comment = Comment.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+NameError: name 'Comment' is not defined
+[07/Dec/2022 14:58:13] "GET /comments/delete/5 HTTP/1.1" 500 84856
+Internal Server Error: /comments/delete/5
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/workspace/git_repo_practice/blog/commentapp/decorators.py", line 9, in decorated
+    comment = Comment.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+NameError: name 'Comment' is not defined
+[07/Dec/2022 14:58:19] "GET /comments/delete/5 HTTP/1.1" 500 84856
+[07/Dec/2022 14:58:30] "GET /articles/list/ HTTP/1.1" 200 8952
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'projectapp.models.Project'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[07/Dec/2022 14:58:33] "GET /projects/list/ HTTP/1.1" 200 7459
+[07/Dec/2022 14:58:35] "GET /articles/list/ HTTP/1.1" 200 8952
+[07/Dec/2022 14:58:36] "GET /articles/detail/1 HTTP/1.1" 200 8223
+[07/Dec/2022 14:58:40] "GET /articles/list/ HTTP/1.1" 200 8952
+[07/Dec/2022 14:58:42] "GET /articles/detail/1 HTTP/1.1" 200 8223
+[07/Dec/2022 14:58:46] "GET /articles/detail/3 HTTP/1.1" 200 6517
+Internal Server Error: /comments/delete/5
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/workspace/git_repo_practice/blog/commentapp/decorators.py", line 9, in decorated
+    comment = Comment.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+NameError: name 'Comment' is not defined
+[07/Dec/2022 14:58:48] "GET /comments/delete/5 HTTP/1.1" 500 84451
+[08/Dec/2022 09:03:03] "GET /?fbclid=PAAaZkSEBZzrt-i0MYr0b3PSOqyxgorRJkLwFnKNgXn6U233Y_qUVpsa7rmjg HTTP/1.1" 200 8959
+[08/Dec/2022 09:03:03] "GET /static/js/magicgrid.js HTTP/1.1" 200 6882
+[08/Dec/2022 09:03:03] "GET /static/base.css HTTP/1.1" 200 824
+[08/Dec/2022 09:03:03] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg HTTP/1.1" 200 5397
+[08/Dec/2022 09:03:03] "GET /media/article/licensed-image.jpg HTTP/1.1" 200 301020
+[08/Dec/2022 09:03:04] "GET /media/article/ccc2.jpg HTTP/1.1" 200 560356
+[08/Dec/2022 09:03:04] "GET /media/article/catacatat.jpg HTTP/1.1" 200 803476
+[08/Dec/2022 09:03:04] "GET /media/article/ccc.jpg HTTP/1.1" 200 638682
+[08/Dec/2022 09:03:04] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+[08/Dec/2022 09:03:04] "GET /media/article/c4.jpeg HTTP/1.1" 200 5181
+[08/Dec/2022 09:03:04] "GET /media/article/c5.jpg HTTP/1.1" 200 122031
+[08/Dec/2022 09:03:04] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 200 1915795
+[08/Dec/2022 09:03:04] "GET /media/article/c3.jpeg HTTP/1.1" 200 353578
+[08/Dec/2022 09:03:04] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 200 2148437
+Not Found: /favicon.ico
+[08/Dec/2022 09:03:04] "GET /favicon.ico HTTP/1.1" 404 3008
+[09/Dec/2022 01:59:13] "GET /?fbclid=PAAab1y_N4z9NVaebGITAfDbX8FGhrOcBOPmvGcUDQghM4gFYmO4-ZZI1nRko HTTP/1.1" 200 8959
+[09/Dec/2022 01:59:13] "GET /static/base.css HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/licensed-image.jpg HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /static/js/magicgrid.js HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/ccc2.jpg HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/ccc.jpg HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/c3.jpeg HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/c4.jpeg HTTP/1.1" 304 0
+[09/Dec/2022 01:59:14] "GET /media/article/c5.jpg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[09/Dec/2022 01:59:15] "GET /favicon.ico HTTP/1.1" 404 3008
+[09/Dec/2022 01:59:19] "GET /articles/detail/1 HTTP/1.1" 200 7553
+[09/Dec/2022 01:59:21] "GET /?fbclid=PAAab1y_N4z9NVaebGITAfDbX8FGhrOcBOPmvGcUDQghM4gFYmO4-ZZI1nRko HTTP/1.1" 200 8959
+[09/Dec/2022 01:59:22] "GET /articles/detail/3 HTTP/1.1" 200 6432
+[09/Dec/2022 01:59:25] "GET /articles/detail/3 HTTP/1.1" 200 6432
+[09/Dec/2022 01:59:27] "GET /accounts/login/?next=/articles/detail/3 HTTP/1.1" 200 5334
+[09/Dec/2022 01:59:34] "POST /accounts/login/ HTTP/1.1" 200 5841
+[09/Dec/2022 01:59:41] "POST /accounts/login/ HTTP/1.1" 302 0
+[09/Dec/2022 01:59:44] "GET / HTTP/1.1" 200 8938
+[09/Dec/2022 01:59:50] "GET /articles/detail/3 HTTP/1.1" 200 6517
+Internal Server Error: /comments/delete/5
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/workspace/git_repo_practice/blog/commentapp/decorators.py", line 9, in decorated
+    comment = Comment.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+NameError: name 'Comment' is not defined
+[09/Dec/2022 01:59:54] "GET /comments/delete/5 HTTP/1.1" 500 75417
+[09/Dec/2022 03:49:03] "GET /?fbclid=PAAaZ_t4A0XLkDTSptFXzrH2DykTkrMgrlb-J-hl4gwrGP-N73uAwgd_HGgxA HTTP/1.1" 200 8938
+Not Found: /favicon.ico
+[09/Dec/2022 03:49:04] "GET /favicon.ico HTTP/1.1" 404 3008
+[09/Dec/2022 03:49:08] "GET /accounts/detail/5 HTTP/1.1" 200 9448
+[09/Dec/2022 03:49:08] "GET /media/profile/cat.jpg HTTP/1.1" 200 6108
+[09/Dec/2022 03:57:01] "GET /projects/list/ HTTP/1.1" 200 7459
+[09/Dec/2022 03:57:01] "GET /media/project/cat.jpg HTTP/1.1" 200 6108
+[09/Dec/2022 03:57:01] "GET /media/project/cat_NpoKb91.jpg HTTP/1.1" 200 6108
+[09/Dec/2022 03:57:01] "GET /media/project/cat_RUHVpCk.jpg HTTP/1.1" 200 6108
+[09/Dec/2022 03:57:01] "GET /media/project/cat_i4IUzBP.jpg HTTP/1.1" 200 6108
+[09/Dec/2022 13:22:07] "GET / HTTP/1.1" 200 8959
+[09/Dec/2022 13:22:07] "GET /static/base.css HTTP/1.1" 200 824
+[09/Dec/2022 13:22:07] "GET /static/js/magicgrid.js HTTP/1.1" 200 6882
+[09/Dec/2022 13:22:08] "GET /media/article/licensed-image.jpg HTTP/1.1" 200 301020
+[09/Dec/2022 13:22:08] "GET /media/article/catacatat.jpg HTTP/1.1" 200 803476
+[09/Dec/2022 13:22:08] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpeg HTTP/1.1" 200 5397
+[09/Dec/2022 13:22:08] "GET /media/article/c5.jpg HTTP/1.1" 200 122031
+[09/Dec/2022 13:22:08] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+[09/Dec/2022 13:22:08] "GET /media/article/c3.jpeg HTTP/1.1" 200 353578
+[09/Dec/2022 13:22:08] "GET /media/article/c4.jpeg HTTP/1.1" 200 5181
+[09/Dec/2022 13:22:08] "GET /media/article/ccc2.jpg HTTP/1.1" 200 560356
+[09/Dec/2022 13:22:08] "GET /media/article/ccc.jpg HTTP/1.1" 200 638682
+[09/Dec/2022 13:22:08] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 200 1915795
+[09/Dec/2022 13:22:09] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 200 2148437
+Not Found: /favicon.ico
+[09/Dec/2022 13:22:09] "GET /favicon.ico HTTP/1.1" 404 3008
+[09/Dec/2022 13:22:16] "GET /accounts/login/?next=/ HTTP/1.1" 200 5334
+[09/Dec/2022 13:22:19] "POST /accounts/login/ HTTP/1.1" 302 0
+[09/Dec/2022 13:22:19] "GET / HTTP/1.1" 200 8938
+[09/Dec/2022 13:22:55] "GET /articles/detail/3 HTTP/1.1" 200 6519
+Internal Server Error: /comments/delete/5
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/workspace/git_repo_practice/blog/commentapp/decorators.py", line 9, in decorated
+    comment = Comment.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+NameError: name 'Comment' is not defined
+[09/Dec/2022 13:22:57] "GET /comments/delete/5 HTTP/1.1" 500 85390
+/workspace/git_repo_practice/blog/commentapp/decorators.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 07, 2022 - 14:57:57
+Django version 3.2.16, using settings 'blog.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[09/Dec/2022 13:24:04] "GET /articles/detail/3 HTTP/1.1" 200 6519
+Watching for file changes with StatReloader
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'articleapp.models.Article'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[09/Dec/2022 14:35:24] "GET /?fbclid=PAAaZ0SUM8-gLY5ur6DUJXHfKbumM_32IcDRIz5HRvQZcnaKAZRfC6JgMOkfY HTTP/1.1" 200 9237
+[09/Dec/2022 14:35:24] "GET /static/base.css HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/licensed-image.jpg HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/ccc.jpg HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /static/js/magicgrid.js HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/ccc2.jpg HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/c3.jpeg HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/c4.jpeg HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/c5.jpg HTTP/1.1" 304 0
+[09/Dec/2022 14:35:24] "GET /media/article/cattt.jpg HTTP/1.1" 200 57629
+Not Found: /favicon.ico
+[09/Dec/2022 14:35:25] "GET /favicon.ico HTTP/1.1" 404 3008
+[09/Dec/2022 14:35:31] "GET /articles/detail/15 HTTP/1.1" 200 6452
+[09/Dec/2022 14:35:38] "GET /accounts/login/?next=/articles/detail/15 HTTP/1.1" 200 5336
+[09/Dec/2022 14:35:44] "POST /accounts/login/ HTTP/1.1" 200 5843
+[09/Dec/2022 14:35:49] "POST /accounts/login/ HTTP/1.1" 302 0
+[09/Dec/2022 14:35:49] "GET / HTTP/1.1" 200 9214
+[09/Dec/2022 14:35:51] "GET /articles/detail/15 HTTP/1.1" 200 6584
+[09/Dec/2022 14:35:53] "GET /articles/update/15 HTTP/1.1" 200 6778
+[09/Dec/2022 14:36:03] "POST /articles/update/15 HTTP/1.1" 302 0
+[09/Dec/2022 14:36:03] "GET /articles/detail/15 HTTP/1.1" 200 6630
+[09/Dec/2022 14:36:05] "GET /articles/list/ HTTP/1.1" 200 9228
+[09/Dec/2022 14:36:07] "GET /articles/detail/4 HTTP/1.1" 200 6586
+[09/Dec/2022 14:36:10] "GET /articles/detail/5 HTTP/1.1" 200 6580
+[09/Dec/2022 14:36:12] "GET /articles/update/5 HTTP/1.1" 200 6770
+[09/Dec/2022 14:36:17] "POST /articles/update/5 HTTP/1.1" 302 0
+[09/Dec/2022 14:36:17] "GET /articles/detail/5 HTTP/1.1" 200 6621
+[09/Dec/2022 14:36:20] "GET /articles/list/ HTTP/1.1" 200 9228
+[09/Dec/2022 14:36:31] "GET /articles/detail/1 HTTP/1.1" 200 11181
+[09/Dec/2022 14:36:38] "GET /articles/detail/1 HTTP/1.1" 200 11181
+[09/Dec/2022 14:36:57] "POST /comments/create/ HTTP/1.1" 302 0
+[09/Dec/2022 14:36:58] "GET /articles/detail/1 HTTP/1.1" 200 11952
+[09/Dec/2022 14:37:04] "GET / HTTP/1.1" 200 9214
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'projectapp.models.Project'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[09/Dec/2022 14:37:06] "GET /projects/list/ HTTP/1.1" 200 6932
+[09/Dec/2022 14:37:07] "GET /projects/detail/1 HTTP/1.1" 200 8470
+[09/Dec/2022 14:37:15] "GET /articles/list/ HTTP/1.1" 200 9228
+[09/Dec/2022 14:37:17] "GET /articles/detail/1 HTTP/1.1" 200 11952
+[09/Dec/2022 14:38:08] "POST /comments/create/ HTTP/1.1" 302 0
+[09/Dec/2022 14:38:08] "GET /articles/detail/1 HTTP/1.1" 200 12769
+[09/Dec/2022 14:38:34] "POST /comments/create/ HTTP/1.1" 302 0
+[09/Dec/2022 14:38:34] "GET /articles/detail/1 HTTP/1.1" 200 13552
+[09/Dec/2022 14:38:49] "GET /articles/update/1 HTTP/1.1" 200 8104
+[09/Dec/2022 14:40:21] "POST /articles/update/1 HTTP/1.1" 302 0
+[09/Dec/2022 14:40:21] "GET /articles/detail/1 HTTP/1.1" 200 13701
+[09/Dec/2022 14:40:24] "GET /articles/update/1 HTTP/1.1" 200 8418
+[09/Dec/2022 14:41:52] "POST /articles/update/1 HTTP/1.1" 302 0
+[09/Dec/2022 14:41:52] "GET /articles/detail/1 HTTP/1.1" 200 13863
+[09/Dec/2022 14:42:09] "GET /articles/update/1 HTTP/1.1" 200 8790
+[09/Dec/2022 14:42:27] "POST /articles/update/1 HTTP/1.1" 302 0
+[09/Dec/2022 14:42:27] "GET /articles/detail/1 HTTP/1.1" 200 13938
+[09/Dec/2022 14:42:29] "GET /articles/update/1 HTTP/1.1" 200 8964
+[09/Dec/2022 14:42:42] "POST /articles/update/1 HTTP/1.1" 302 0
+[09/Dec/2022 14:42:42] "GET /articles/detail/1 HTTP/1.1" 200 13939
+[09/Dec/2022 14:44:25] "GET /articles/list/ HTTP/1.1" 200 9228
+[09/Dec/2022 14:44:25] "GET /media/article/cattt.jpg HTTP/1.1" 304 0
+[09/Dec/2022 14:44:43] "GET /articles/detail/5 HTTP/1.1" 200 6621
+[09/Dec/2022 14:44:45] "GET /articles/detail/3 HTTP/1.1" 200 6434
+[09/Dec/2022 14:46:02] "POST /comments/create/ HTTP/1.1" 302 0
+[09/Dec/2022 14:46:03] "GET /articles/detail/3 HTTP/1.1" 200 7185
+[09/Dec/2022 14:46:06] "GET /articles/list/ HTTP/1.1" 200 9228
+[09/Dec/2022 14:52:04] "GET /?fbclid=PAAaagF_M5pftV-oqZmVGHRc9kjhNtVPoUTDvvCdK2PNpVo2qklfnYRKyuHwQ HTTP/1.1" 200 9214
+[09/Dec/2022 14:52:04] "GET /media/article/cattt.jpg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[09/Dec/2022 14:52:05] "GET /favicon.ico HTTP/1.1" 404 3008
+[09/Dec/2022 14:59:00] "GET /?fbclid=PAAaZydQiLZYqu6_3pCEKyYPfj8zDv5hS0xb66-KmM4vmOTIbFqQL5b0N_Csw HTTP/1.1" 200 9214
+[09/Dec/2022 14:59:00] "GET /media/article/cattt.jpg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[09/Dec/2022 14:59:01] "GET /favicon.ico HTTP/1.1" 404 3008
+[10/Dec/2022 04:49:04] "GET /?fbclid=PAAaZpW9dIig-A9OpaxOh4DRr7Sml5AfX6i4GsA6CJQSh9Rs3lv-iVNp9xBQc HTTP/1.1" 200 9214
+[10/Dec/2022 04:49:04] "GET /static/base.css HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /static/js/magicgrid.js HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/c3.jpeg HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/licensed-image.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/ccc2.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/ccc.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/c4.jpeg HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/cattt.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:49:05] "GET /media/article/c5.jpg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[10/Dec/2022 04:49:05] "GET /favicon.ico HTTP/1.1" 404 3008
+[10/Dec/2022 04:49:23] "GET /articles/detail/1 HTTP/1.1" 200 13939
+[10/Dec/2022 04:50:10] "GET /articles/detail/1 HTTP/1.1" 200 13939
+[10/Dec/2022 04:50:49] "GET /articles/detail/11 HTTP/1.1" 200 6581
+[10/Dec/2022 04:50:55] "GET /articles/detail/11 HTTP/1.1" 200 6581
+[10/Dec/2022 04:50:56] "GET /articles/update/11 HTTP/1.1" 200 6768
+[10/Dec/2022 04:51:03] "POST /articles/update/11 HTTP/1.1" 302 0
+[10/Dec/2022 04:51:04] "GET /articles/detail/11 HTTP/1.1" 200 6604
+[10/Dec/2022 04:51:05] "GET /projects/list/ HTTP/1.1" 200 6932
+[10/Dec/2022 04:51:05] "GET /media/project/cat.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:51:05] "GET /media/project/cat_NpoKb91.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:51:05] "GET /media/project/cat_RUHVpCk.jpg HTTP/1.1" 304 0
+[10/Dec/2022 04:51:08] "GET /projects/detail/2 HTTP/1.1" 200 6146
+[10/Dec/2022 04:51:09] "GET /articles/list/ HTTP/1.1" 200 9228
+[10/Dec/2022 04:51:12] "GET /projects/list/ HTTP/1.1" 200 6932
+[10/Dec/2022 04:51:13] "GET /projects/detail/3 HTTP/1.1" 200 6146
+[10/Dec/2022 04:51:28] "GET /articles/list/ HTTP/1.1" 200 9228
+[10/Dec/2022 04:52:15] "GET /articles/detail/3 HTTP/1.1" 200 7185
+[10/Dec/2022 04:52:18] "GET /articles/detail/1 HTTP/1.1" 200 13939
+[10/Dec/2022 04:52:24] "GET /articles/detail/11 HTTP/1.1" 200 6604
+[10/Dec/2022 04:52:57] "GET /articles/detail/11 HTTP/1.1" 200 6604
+[10/Dec/2022 04:53:06] "GET /articles/detail/15 HTTP/1.1" 200 6630
+[10/Dec/2022 04:53:13] "GET /articles/detail/9 HTTP/1.1" 200 6577
+[10/Dec/2022 04:53:17] "GET /articles/detail/11 HTTP/1.1" 200 6604
+[10/Dec/2022 04:53:22] "GET /articles/detail/1 HTTP/1.1" 200 13939
+[10/Dec/2022 04:53:35] "GET /articles/detail/1 HTTP/1.1" 200 13939
+[10/Dec/2022 04:55:12] "GET /projects/list/ HTTP/1.1" 200 6932
+[10/Dec/2022 04:55:23] "GET /projects/create/ HTTP/1.1" 200 4988
+[10/Dec/2022 04:55:27] "GET /accounts/logout/?next=/projects/list/ HTTP/1.1" 302 0
+[10/Dec/2022 04:55:27] "GET /projects/list/ HTTP/1.1" 200 6955
+[10/Dec/2022 04:55:28] "GET /projects/create/ HTTP/1.1" 302 0
+[10/Dec/2022 04:55:29] "GET /accounts/login/?next=/projects/create/ HTTP/1.1" 200 5336
+python: can't open file 'manage,py': [Errno 2] No such file or directory
+Watching for file changes with StatReloader
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'articleapp.models.Article'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[10/Dec/2022 23:19:59] "GET /articles/list/ HTTP/1.1" 200 10173
+[10/Dec/2022 23:19:59] "GET /media/article/DateTimeField_TmwHG70.png HTTP/1.1" 304 0
+[10/Dec/2022 23:20:00] "GET /articles/list/ HTTP/1.1" 200 10173
+[11/Dec/2022 01:28:50] "GET /?fbclid=PAAaZswANx3rPA0BG3ym4jz30RF-BlbJVt3Zt1L1hvJAh56Xq9lHUE17Jl5p0 HTTP/1.1" 200 10182
+[11/Dec/2022 01:28:50] "GET /static/base.css HTTP/1.1" 200 824
+[11/Dec/2022 01:28:50] "GET /static/js/magicgrid.js HTTP/1.1" 200 6882
+[11/Dec/2022 01:28:50] "GET /media/article/cattt.jpg HTTP/1.1" 200 57629
+[11/Dec/2022 01:28:50] "GET /media/article/DateTimeField_TmwHG70.png HTTP/1.1" 200 1486056
+[11/Dec/2022 01:28:51] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584
+[11/Dec/2022 01:28:51] "GET /media/article/c5.jpg HTTP/1.1" 200 122031
+[11/Dec/2022 01:28:51] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 200 1915795
+[11/Dec/2022 01:28:51] "GET /media/article/first_kdVXOjH.jpeg HTTP/1.1" 200 5397
+[11/Dec/2022 01:28:51] "GET /media/article/ccc2.jpg HTTP/1.1" 200 560356
+[11/Dec/2022 01:28:51] "GET /media/article/licensed-image.jpg HTTP/1.1" 200 301020
+[11/Dec/2022 01:28:51] "GET /media/article/c3.jpeg HTTP/1.1" 200 353578
+[11/Dec/2022 01:28:51] "GET /media/article/c4.jpeg HTTP/1.1" 200 5181
+[11/Dec/2022 01:28:51] "GET /media/article/catacatat.jpg HTTP/1.1" 200 803476
+[11/Dec/2022 01:28:51] "GET /media/article/ccc.jpg HTTP/1.1" 200 638682
+[11/Dec/2022 01:28:51] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 200 2148437
+[11/Dec/2022 08:09:34] "GET /?fbclid=PAAaZ1SmOq08j2iwCXn694LLI3tQqcdEUlujnEhpau6sMhQ6iqcoXcbGIo5BI HTTP/1.1" 200 10182
+[11/Dec/2022 08:09:34] "GET /static/base.css HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/DateTimeField_TmwHG70.png HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /static/js/magicgrid.js HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/c3.jpeg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/c5.jpg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/cattt.jpg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/c4.jpeg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/ccc2.jpg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/cat-toes-paw-number-paws-tiger-tabby.png HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/ccc.jpg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/catacatat.jpg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/licensed-image.jpg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/383F9230-3047-4F91-A52A-375CE1A5E3A5.jpeg HTTP/1.1" 304 0
+[11/Dec/2022 08:09:34] "GET /media/article/first_kdVXOjH.jpeg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[11/Dec/2022 08:09:35] "GET /favicon.ico HTTP/1.1" 404 3008
+[11/Dec/2022 08:09:40] "GET /articles/detail/16 HTTP/1.1" 200 7305
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 154: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+[11/Dec/2022 19:35:40] "GET / HTTP/1.1" 500 169031
+Not Found: /favicon.ico
+[11/Dec/2022 19:35:40] "GET /favicon.ico HTTP/1.1" 404 3008
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 154: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+[11/Dec/2022 19:35:47] "GET / HTTP/1.1" 500 169046
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 154: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+[11/Dec/2022 19:35:48] "GET / HTTP/1.1" 500 169046

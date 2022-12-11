@@ -293,6 +293,7 @@ let magicGrid = new MagicGrid({
   useMin: true
 });
 
+
 //이미지 로딩 시간이 js 로딩 시간보다 길어서 제대로 grid가 보이지 않기 때문에 추가한다.
 var masonrys = document.getElementsByTagName('img');
 
@@ -302,7 +303,10 @@ for(let i=0; i<masonrys.length;i++){
     },false); //이미지가 로드될 때마다 positionItems를 실행해서 다시 재배치되게 한다. 이후 실행될 함수는 false로.
 }
 
+magicGrid.listen();
+
+magicGrid.positionItems(); //왠지 몰라도 마지막에 positionItems를 써줘야 정상적으로 재배치가 된다?
 
 
 
-magicGrid.listen(); 
+

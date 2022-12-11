@@ -2,26 +2,50 @@
 
 
 {% block content %}
+<style>
+    @media screen and (max-width:600px){
+        .article_mobile_content{
+            margin:auto 1rem;
+    }
+        
+        
+    }
+</style>
+
+
+
+
+
 <div>
     <div style="text-align:center; max-width:700px; margin:4rem auto;">
+        <!-- 제목 표시-->
         <h1>
             {{ target_article.title }}
         </h1>
-        <h5>
-            {% if target_article.writer.profile %}
-                {{ target_article.writer.profile.nickname }}
-            {% else %}
-                {{ target_article.writer.username }}
-            {% endif %}
-        </h5>
+        
+        <!-- 작성자, 생성/수정 시간 표시-->
+        <div style="text-align: left; color: grey; margin: 2rem auto 1rem 1rem;">
+            <h7>
+                {% if target_article.writer.profile %}
+                    {{ target_article.writer.profile.nickname }}
+                {% else %}
+                    {{ target_article.writer.username }}
+                {% endif %}
+        
+                 | {{ target_article.created_at }}<br>
+                {{ target_article.updated_at }} 수정
+            </h7>
+        </div>
+        
+        
+       
 
         <hr>
-
+        <!-- 이미지 및 본문 영역--> 
         <img src="{{ target_article.image.url }}" alt="#" style="width:100%; border-radius:1rem; margin:2rem 0;">
 
-
-        <div style="text-align: left;">
-            
+        
+        <div class="article_mobile_content" style="text-align: left;">
             {{ target_article.content | safe }} <!-- | safe 하면 태그 텍스트는 사라짐-->
         </div>
 

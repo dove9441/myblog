@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from projectapp.forms import *
@@ -7,6 +7,8 @@ from django.urls import reverse_lazy
 from django.views.generic.list import MultipleObjectMixin
 from articleapp.models import Article
 from subscribeapp.models import Subscription
+from django.utils.decorators import method_decorator
+from projectapp.decorators import project_ownership_required
 
 # Create your views here.
 @method_decorator(login_required,'get')
@@ -50,3 +52,17 @@ class ProjectListView(ListView):
     template_name = "projectapp/list.html"
     paginate_by = 25
     context_object_name = 'project_list'
+    
+
+
+@method_decorator(project_ownership_required, 'get')
+@method_decorator(project_ownership_required, 'post')
+class ProjectDeleteView(DeleteView):
+    model = Project
+    template_name = 'projectapp/delete.html'
+    context_object_name = "target_project"
+    success_url = reverse_lazy("projectapp:list")
+    
+    #View 만들면 제발 urls.py에 추가하자.............
+    
+    

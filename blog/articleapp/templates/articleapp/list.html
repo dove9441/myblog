@@ -6,7 +6,8 @@
         
         .container {
             padding: 0;
-            margin:0, auto;
+            margin:0 auto;
+            display: block;
         }
         
         
@@ -27,32 +28,118 @@
             border-radius:1rem;
         }
         
+        
+        /* 모바일을 위한 미디어 쿼리  */
+        @media screen and (max-width:600px) {
+        .container_list { 
+            padding: 0;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .container_list .list_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+        }
+        
+            
+        .container_list img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:0.5rem;
+        }
+            
+        .container_list .image_div{
+            height:100%;
+            width: 7rem;
+            position:absolute;
+            top: 0;
+            right:1rem;
+        }
+            
+        .container_list .contents_div{
+            margin-top: 0.8rem;
+            height: 100%;
+            width: calc(100% - 7rem);
+            font-size: x-small !important;
+        }
+        
+        .container_list .contents_div p, .container_list .contents_div span{
+            font-size: x-small !important;
+        }
+            
+        
+}
+        
+        
     </style>
+
+
+<script type="application/javascript">
+    function gridview(){
+        document.getElementById('list').style.display = "none";
+        document.getElementById('grid').style.display = "block";
+    }
     
-    <!-- <div class="container">
-        <div class="item1"><img src="https://picsum.photos/200/300" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/340" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/260" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/400" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/510" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/380" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/250" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/200" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/440" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/320" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/290" alt="#"></div>
-        <div class="item1"><img src="https://picsum.photos/200/260" alt="#"></div>
-    </div> -->
+    function listview(){
+        document.getElementById('list').style.display = "block";
+        document.getElementById('grid').style.display = "none";
+    }
+
+
+</script>
+<!-- 목록 표시 상단 영역-->  
+
+<div style="display:inline; margin:auto 1rem;">
+    <b>전체글</b>
+</div>
+
+<div style="display:inline; float:right; margin:auto 1rem;">
+    <a href="javascript:void(0);" onclick="gridview();" style="box-shadow:0 0 2px #ccc;text-align:right;" class="material-icons">
+    grid_on
+    </a>
+    
+    <a href="javascript:void(0);" onclick="listview();" style="box-shadow:0 0 2px #ccc;text-align:right;" class="material-icons">
+    toc
+    </a>
+</div>
+    
+<hr>
+
+
+    
+    <!-- grid로 표시(기본값) -->
 
     {% if article_list %} <!--article_list가 존재한다면-->
-    <div class="container">
-        {% for article in article_list %} <!-- view에서 context_object_name이다-->    
+    <div class="container" id="grid">
+        {% for article in article_list reversed %} <!-- view에서 context_object_name이다 최신이 위로-->    
         <a href="{% url 'articleapp:detail' pk=article.pk %}">
             {% include 'snippets/card.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
         </a>
         {% endfor %}
     </div>
-     <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스를 js에서 사용하므로 안에다가 넣어준다-->
+    <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스를 js에서 사용하므로 안에다가 넣어준다-->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+
+    
+    
+    <!-- list로 표시 -->
+     {% if article_list %} 
+    <div class="container_list" id="list">
+        {% for article in article_list reversed %}   
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/list_article_card.html' with article=article %} 
+        </a>
+        <hr>
+        {% endfor %}
+    </div>
     {% else %}
     <div style="text-align:center;">
         <h1>
@@ -61,6 +148,9 @@
     </div>
     {% endif %}
     
+
+
+<!-- pagination, create 영역 -->
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
     
 
@@ -69,11 +159,6 @@
         새 글 작성하기
         </a>
     </div>
-
-
-
-
-
 
 
 {% endblock %}

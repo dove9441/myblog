@@ -1,7 +1,7 @@
 
 from django.http import HttpResponseForbidden
 from articleapp.models import *
-
+from commentapp.models import *
 
 
 def comment_ownership_required(func):
