@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from profileapp.decorators import *
-
+from django.contrib.auth.models import User
 # Create your views here.
 
 class ProfileCreateView(CreateView):
@@ -44,3 +44,21 @@ class ProfileUpdateView(UpdateView): #사실 Update는 기존 내용 수정이�
     
     def get_success_url(self):
         return reverse_lazy('accountapp:detail', kwargs={'pk' : self.object.user.pk})
+    
+    
+
+class ProfileListView(ListView):
+    model = Profile
+    context_object_name = 'target_profile'
+    template_name = 'profileapp/list.html'
+    paginate_by = 20
+    
+    
+    def get_context_data(self, **kwargs):
+        object_list = User.objects.all()
+        print(object_list)
+        return super(ProfileListView,self).get_context_data(object_list=object_list,**kwargs)
+    
+    
+    
+    #제발 View 만들면 urls.py에서 만들자

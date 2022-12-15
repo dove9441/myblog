@@ -5,8 +5,13 @@
             border-radius: 1rem;
             border-color: #bbb;">
     <div>
+        <div style="object-fit:cover; width:10%; float:left; margin-right: 0.5rem; margin-bottom:0.5rem;">
+                {% if target_article.writer.profile.image %}
+                <img src="{{ target_article.writer.profile.image.url }}" style="border-radius:10rem; width:100%; height:100%;">
+                {% endif %}
+            </div>
         <strong>{{ comment.writer.profile.nickname }}</strong>
-        &nbsp&nbsp&nbsp <!-- 자동 줄바꿈을 막기 위해 작성하는 특수공백문자-->
+        <br> <!-- 자동 줄바꿈을 막기 위해 작성하는 특수공백문자 &nbsp&nbsp&nbsp-->
         {{ comment.created_at }}
     </div>
     <div style="margin: 1rem 0;">

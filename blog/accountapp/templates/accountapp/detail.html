@@ -4,7 +4,7 @@
 <div class="dove_500px_div">
     <div>
         <p>
-            {{ target_user.date_joined }}
+            {{ target_user.date_joined }}<span style="color:gray; font-size:x-small;">부터</span>
         </p>
         
         <!-- 프로파일 존재하면 닉네임 띄우고 아니면 프로파일 생성으로 유도-->
@@ -31,8 +31,8 @@
         {% else %}
 
             {% if target_user == user %} <!--로그인된 사용자라면 보여주기 위해-->
-                <a href="{% url 'profileapp:create' %}">
-                    <h2 style="font-family: 'NanumSqureB">
+                <a href="{% url 'profileapp:create' %}" class="btn btn-outline-info" style="margin: 1rem auto;display:block; width:50%;">
+                    <h2 style="font-family: 'NanumSqureB;">
                     Create Profile
                 </h2>
                 </a>
@@ -65,7 +65,7 @@
     
      <!-- 해당 계정의 글 목록을 보여주기-->
 <div>
-    {% include 'snippets/list_fragment.html' with article_list=object_list %}
+    {% include 'snippets/article_list_viewselect.html' with article_list=object_list %}
 </div>
 
 

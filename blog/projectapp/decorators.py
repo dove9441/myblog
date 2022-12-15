@@ -6,7 +6,7 @@ from projectapp.models import *
 
 def project_ownership_required(func):
     def decorated(request, *args, **kwargs):
-        project = Project.objects.get(pk=kwargs['pk']) #접속중인 사람의 pk를 가져옴
+        project = Project.objects.get(pk=kwargs['pk']) #해당 pk를 가진 project의 객체들을 가져옴
         if not project.writer == request.user:
             return HttpResponseForbidden()
         

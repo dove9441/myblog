@@ -22,6 +22,13 @@ class ProjectCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('projectapp:detail', kwargs={'pk' : self.object.pk})
     
+#DeleteView가 작동하지 않았던 이유가 writer를 만들어놓고 form_valid로 지정을 안 해줘서 그런 것이었다.
+    def form_valid(self,form):
+        temp_project = form.save(commit=False)
+        temp_project.writer = self.request.user
+        temp_project.save()
+        return super().form_valid(form)
+    
     
 class ProjectDetailView(DetailView, MultipleObjectMixin): #믹스인 사용
     model = Project

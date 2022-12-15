@@ -11,8 +11,8 @@
         <a href="{% url 'projectapp:list' %}">
             <span>Projects</span>
         </a> |
-        <a href="#">
-            <span>Subscriptions</span>
+        <a href="{% url 'profileapp:list' %}">
+            <span>contributors</span>
         </a> |
         
         
@@ -24,6 +24,9 @@
         	<span>SignUp</span>
         </a>
         {% else %}
+         <a href="#">
+            <span>Subscriptions</span>
+        </a> |
         <a href="{% url 'accountapp:detail' pk=user.pk %}"> <!-- 이렇게 하면 접속 시 user의 pk를 같이 넘겨준다-->
             <span>마이페이지</span> 
         </a> |

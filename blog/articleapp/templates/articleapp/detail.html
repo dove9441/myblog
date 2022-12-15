@@ -23,8 +23,17 @@
             {{ target_article.title }}
         </h1>
         
-        <!-- 작성자, 생성/수정 시간 표시-->
+        <!-- 작성자, 프로필 사진, 생성/수정 시간 표시-->
         <div style="text-align: left; color: grey; margin: 2rem auto 1rem 1rem;">
+            
+            <!-- 사진 / 날짜 표시 -->
+            <div style="object-fit:cover; width:10%; float:left; margin-right: 0.5rem; margin-bottom:0.5rem;">
+                {% if target_article.writer.profile.image %}
+                <img src="{{ target_article.writer.profile.image.url }}" style="border-radius:10rem; width:100%; height:100%;">
+                {% endif %}
+            </div>
+            
+            
             <h7>
                 {% if target_article.writer.profile %}
                     {{ target_article.writer.profile.nickname }}
@@ -72,8 +81,7 @@
         
         <!-- comment create 부분-->
         {% include 'commentapp/create.html' with article=target_article %}
-
-        
+    
         
     </div>
 </div>
