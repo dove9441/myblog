@@ -2,12 +2,23 @@ from django.forms import ModelForm
 from articleapp.models import *
 from django import forms
 from projectapp.models import Project
+from tinymce.widgets import TinyMCE
 
 
-class ArticleCreationForm(ModelForm): #모델을 form으로 변한
-    content = forms.CharField(widget=forms.Textarea(attrs={'class' : 'editable', #내장 CharField의 여러 속성들을 변경한다. text-left는 부트스트랩 class css이다
-                                                          'style' : 'height: auto; text-align: left;'  }))
+class TinyMCEWidget(TinyMCE):
+    def use_required_attribute(self, *args):
+        return False
     
+    
+class ArticleCreationForm(ModelForm): #모델을 form으로 변한
+    content = forms.CharField(
+        widget=TinyMCEWidget(
+            attrs={'required': False, 'cols': 30, 'rows': 10}
+        )
+    )
+    #forms.CharField(widget=forms.Textarea(attrs={'class' : 'editable', #내장 CharField의 여러 속성들을 변경한다. text-left는 부트스트랩 class css이다
+    #'style' : 'height: auto; text-align: left;'  }))
+            
     project = forms.ModelChoiceField(queryset=Project.objects.all(), required=False) #project 필수 지정 해제
     class Meta:
         model = Article

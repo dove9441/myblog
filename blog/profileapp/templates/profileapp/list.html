@@ -1,7 +1,55 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 
-<div>
+
+{% block content %}
+<style>
+    /* project_list의 스타일 */
     
-    
+    .container {
+        padding: 0;
+        margin: 2rem auto;
+    }
+    .container div{
+        margin:auto 2rem;
+        justify-content: center;
+        align-items: center;   
+    }
+
+    .container img{
+        width: 5rem;
+        height:5rem;
+        border-radius: 5rem;
+        object-fit: cover;
+    }
+
+
+
+</style>
+
+
+{% if object_list %}
+<div class="container">
+    {% for user in object_list %}
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            {% include 'snippets/user_list.html' with user=user %}
+        </a>
+
+    {% endfor %}
 </div>
+<script src="{% static 'js/magicgrid.js' %}"></script>
+
+
+
+{% else %}
+<div>
+    User가 존재하지 않습니다.
+</div>
+{% endif %}
+
+
+<!-- pagination 영역 -->
+{% include 'snippets/pagination.html' with page_obj=page_obj %}
+
+{% endblock %}

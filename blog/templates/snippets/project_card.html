@@ -1,4 +1,4 @@
-<div style="display:block; text-align:center;"> <!-- list.html에서 div display 속성이 flex라서 제목 등도 flex됨. 이를 제거-->
+<div style="text-align:center;"> <!-- list.html에서 div display 속성이 flex라서 제목 등도 flex됨. 이를 제거-->
     <img src="{{ project.image.url }}" alt="#">
     <h5 class="mt-2" style="font-family:NanumSqureB;">{{ project.title | truncatechars:8 }}</h5><!-- 일정 글자 수 넘으면 ...으로 표시--->
 </div>

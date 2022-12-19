@@ -1,0 +1,20 @@
+{% load static %}
+
+{% if user.profile %}
+    <div style="text-align:center;">
+        <img src="{{ user.profile.image.url }}">
+        <h4 class="mt-2" style="font-family:NanumSqureB;">{{ user.profile.nickname }}</h4>
+        {% if user.profile.message %}
+            <h6 class="mt-1" style="color:gray;">{{ user.profile.message }}</h6>
+        {% else %}
+        <h6 class="mt-1" style="color:gray;">설정된 메시지가 없습니다.</h6>
+        {% endif %}
+    </div>
+{% else %}
+    <div style="text-align:center;">
+        <img src="{% static 'icons/account_circle.svg' %}">
+        <h4 class="mt-2" style="font-family:NanumSqureB;">{{ user.username }}</h4>
+        <h6 class="mt-1" style="color:gray;">설정된 프로필이 없습니다.</h6>
+    </div>
+{% endif %}
+

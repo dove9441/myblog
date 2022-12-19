@@ -10,3 +10,17 @@ from django.db import models
 
 # class HelloWorld(models.Model): #HelloWorld 객체는 text 멤버변수를 가지고 있다.
 #     text = models.CharField(max_length=255, null=False)
+
+
+
+#user는 다음과 같이 정의되어 있다
+# class User(AbstractUser):
+#     class Meta(AbstractUser.Meta):
+#         swappable = 'AUTH_USER_MODEL'
+#         username = models.CharField()
+#         first_name = models.CharField()
+#         last_name = models.CharField()
+#         email = models.EmailField()
+#         is_staff = models.BooleanField()
+#         is_active = models.BooleanField()
+#         date_joined = models.DateTimeField()

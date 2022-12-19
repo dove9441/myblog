@@ -51,13 +51,14 @@ class ProfileListView(ListView):
     model = Profile
     context_object_name = 'target_profile'
     template_name = 'profileapp/list.html'
-    paginate_by = 20
+    paginate_by = 15
     
     
     def get_context_data(self, **kwargs):
         object_list = User.objects.all()
-        print(object_list)
         return super(ProfileListView,self).get_context_data(object_list=object_list,**kwargs)
+    #get_context_data를 오버라이딩해줘야 템플릿에 데이터가 같이 넘어간다.
+    #profileapp.models에서 이미 User와 ForeignKey로 연결을 해놓아서 유저 데이터를 넘길 수 있다.
     
     
     

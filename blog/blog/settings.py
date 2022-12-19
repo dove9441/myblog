@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscribeapp',
+    'tinymce', #tinymce 사용
     
 ]
 
@@ -147,6 +148,35 @@ MEDIA_URL = '/media/' #주소창에서 접근하는 경로
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #파이썬 파일에서 접근하는 경로
 
 
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/gxr8kvj7d7ud5xjy8k4tqvbjz1mlfwj09f6ol6n9s8x0gggv/tinymce/6/tinymce.min.js"
+TINYMCE_COMPRESSOR = False
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'silver',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+}
 
 #처음 이렇게 만들고(앱 내부의 views.py) root에서 setting.py에서 템플릿 경로 추가
 #렌더링할 html경로를 적어주는 것
