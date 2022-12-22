@@ -4,16 +4,7 @@
 {% block content %}
 
 <!-- WYSIWYG -->
-<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
-
-<!-- 내장 스타일 오버라이딩 꼭 css link 다음에 써야 제대로 적용됨 -->
-<style>
-.medium-editor-element {
-    word-wrap: break-word;
-    min-height: 300px;
-}
-</style>
+<script src="https://cdn.tiny.cloud/1/gxr8kvj7d7ud5xjy8k4tqvbjz1mlfwj09f6ol6n9s8x0gggv/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 
 	<div style="text-align:center; max-width:500px; margin:4rem auto;">
@@ -27,6 +18,20 @@
             <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="저장">
         </form>
     </div>
-<script>var editor = new MediumEditor('.editable');</script>
+<!-- tinymce 스크립트-->
+<script>
+    tinymce.init({
+    language: "ko_KR",
+      selector: 'textarea',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+      toolbar: 'bold italic underline strikethrough | link image media table | checklist numlist bullist | align lineheight |  blocks fontsize | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+    });
+  </script>
 {% endblock %}
 
