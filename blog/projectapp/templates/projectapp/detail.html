@@ -106,6 +106,10 @@
 {% if user.is_authenticated %}
 <!-- 삭제 버튼 -->
 <div class="text-center mb-5">
+    <a class="btn btn-info rounded-pill px-4"
+               href="{% url 'projectapp:update' pk=target_project.pk %}">
+                수정
+    </a>
     <a class="btn btn-danger rounded-pill px-4"
                href="{% url 'projectapp:delete' pk=target_project.pk %}">
                 삭제

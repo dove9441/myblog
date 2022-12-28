@@ -6,10 +6,10 @@
     
     <div style="font-size:.7rem;">
         <a href="{% url 'articleapp:list' %}">
-            <span>Articles</span> 
+            <span>게시글</span> 
         </a> |
         <a href="{% url 'projectapp:list' %}">
-            <span>Projects</span>
+            <span>게시판</span>
         </a> |
         <a href="{% url 'profileapp:list' %}">
             <span>Users</span>
@@ -21,7 +21,7 @@
             <span>Login</span> 
         </a> |
         <a href="{% url 'accountapp:create' %}">
-        	<span>SignUp</span>
+        	<span>Signup</span>
         </a>
         {% else %}
          <a href="#">

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, DetailView, ListView, DeleteView
+from django.views.generic import CreateView, DetailView, ListView, DeleteView, UpdateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from projectapp.forms import *
@@ -69,6 +69,21 @@ class ProjectDeleteView(DeleteView):
     context_object_name = "target_project"
     success_url = reverse_lazy("projectapp:list")
     
-    #View 만들면 제발 urls.py에 추가하자.............
     
     
+
+@method_decorator(project_ownership_required, 'get')
+@method_decorator(project_ownership_required, 'post')
+class ProjectUpdateView(UpdateView):
+    model = Project
+    template_name = 'projectapp/update.html'
+    form_class = ProjectCreationForm
+    context_object_name = 'target_project'
+    
+    def get_success_url(self):
+        return reverse_lazy('projectapp:detail', kwargs={'pk' : self.object.pk})
+        
+        
+        
+        
+#View 만들면 제발 urls.py에 추가하자.............

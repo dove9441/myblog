@@ -4,9 +4,10 @@
 {% block content %}
 <div style="text-align:center; max-width:500px; margin:4rem auto">
     <div class="mb-4">
-        게시판 만들기
+        게시판 수정하기
     </div>
-    <form action="{% url 'projectapp:create' %}" method="post" enctype="multipart/form-data">
+    <!-- form action에 pk 안 적어주면 noreverseMatch 오류가 난다 -->
+    <form action="{% url 'projectapp:update' pk=target_project.pk %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="저장">
