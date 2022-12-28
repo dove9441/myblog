@@ -31,7 +31,7 @@
         }
         
     </style>
-    {% if project_list %} <!--article_list가 존재한다면-->
+    {% if project_list %} <!--project_list가 존재한다면-->
     <div class="container">
         {% for project in project_list %} <!-- view에서 context_object_name이다-->    
         <a href="{% url 'projectapp:detail' pk=project.pk %}">

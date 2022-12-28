@@ -34,8 +34,7 @@ class ProjectDetailView(DetailView, MultipleObjectMixin): #믹스인 사용
     model = Project
     context_object_name = 'target_project'
     template_name = 'projectapp/detail.html'
-    
-    paginate_by = 25
+
     
     def get_context_data(self, **kwargs): #템플릿에게 데이터를 전달하기 위해 오버라이딩
         project = self.object

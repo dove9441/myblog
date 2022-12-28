@@ -67,4 +67,6 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = 'article_list'
     template_name = 'articleapp/list.html'
-    paginate_by = 20 #paginate_by는 한 목록에 몇 개의 글을 보여줄지를 결정한다.
+    ordering = ['-created_at']
+    paginate_by = 15 #paginate_by는 한 목록에 몇 개의 글을 보여줄지를 결정한다.
+    

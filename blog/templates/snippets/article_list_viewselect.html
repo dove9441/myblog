@@ -97,7 +97,13 @@
     <b>전체글</b>
 </div>
 
+<!-- 아이콘 내비게이션 바 -->
 <div style="display:inline; float:right; margin:auto 1rem;">
+    <a href="{% url 'articleapp:create' %}" class="material-icons" style="box-shadow:0 0 2px #ccc;text-align:right;
+              background-color: wtite;">
+        edit_square
+    </a>
+    
     <a href="javascript:void(0);" onclick="gridview();"
        style="box-shadow:0 0 2px #ccc;text-align:right;
               background-color: #f2f2f2;" class="material-icons" id="gridselect">
@@ -157,8 +163,8 @@
     
 
 
-<!-- pagination, create 영역 -->
-    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+<!-- create 영역 -->
+
     
 
     <div style="text-align:center;">
