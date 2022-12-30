@@ -10,4 +10,16 @@ class CommentCreationForm(ModelForm):
         model = Comment
         fields = ['content']
         
-        #model, form 만들고 migration하기
+        
+
+class AnonymousCommentCreationForm(ModelForm):
+    content = forms.CharField(widget=forms.Textarea(attrs={'class' : 'editable',
+                                                          'style' : 'height:auto; text-align: left;' }))
+    
+    class Meta:
+        model = AnonymousComment
+        fields = ['username', 'password', 'content']
+        
+        
+#model, form 만들고 migration하기
+        

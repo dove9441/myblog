@@ -38,3 +38,14 @@ class CommentDeleteView(DeleteView):
 
     def get_success_url(self): 
         return reverse_lazy('articleapp:detail', kwargs={'pk':self.object.article.pk})
+
+    
+
+# 익명 댓글 Views
+class AnonymousCommentCreationForm(CreateView):
+    model = AnonymousComment
+    form_class = AnonymousCommentCreationForm
+    template_name = 'commentapp/anonymouscreate.html' #추후 위의 create.html과 login 상태 확인하여 다르게 표시하는 형태로 통합할 것
+    
+    def get_success_url(self):
+        return reverse_lazy('articleapp:detail', kwargs={'pk' : self.object.article.pk })
