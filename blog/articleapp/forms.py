@@ -13,7 +13,7 @@ class TinyMCEWidget(TinyMCE):
 class ArticleCreationForm(ModelForm): #모델을 form으로 변한
     content = forms.CharField(
         widget=TinyMCEWidget(
-            attrs={'required': False, 'cols': 30, 'rows': 10}
+            attrs={'required': False, 'cols': 30, 'rows': 30}
         )
     )
     #forms.CharField(widget=forms.Textarea(attrs={'class' : 'editable', #내장 CharField의 여러 속성들을 변경한다. text-left는 부트스트랩 class css이다

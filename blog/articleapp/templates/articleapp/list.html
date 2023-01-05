@@ -73,6 +73,50 @@
 }
         
         
+        /* pc를 위한 미디어 쿼리 */
+        @media screen and (min-width:600px) {
+        .container_list { 
+            padding: 0;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .container_list .list_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+        }
+        
+            
+        .container_list img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:0.5rem;
+        }
+            
+        .container_list .image_div{
+            height:100%;
+            width: 7rem;
+            position:absolute;
+            top: 0;
+            right:1rem;
+        }
+            
+        .container_list .contents_div{
+            margin-top: 0.8rem;
+            height: 100%;
+            width: calc(100% - 7rem);
+            font-size: x-small !important;
+        }
+        
+        .container_list .contents_div p, .container_list .contents_div span{
+            font-size: x-small !important;
+        }
+            
+        
+}
+        
+        
     </style>
 
 

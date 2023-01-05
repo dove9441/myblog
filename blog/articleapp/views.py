@@ -32,7 +32,13 @@ class ArticleDetailView(DetailView, FormMixin): #detailview에서 comment의 for
     model = Article
     template_name = 'articleapp/detail.html'
     context_object_name = 'target_article'
-    form_class = AnonymousCommentCreationForm
+    
+    def get_form_class(self):
+        if self.request.user.is_authenticated:
+            return CommentCreationForm
+        else:
+            return AnonymousCommentCreationForm
+    #form_class = AnonymousCommentCreationForm
     #form_class = CommentCreationForm #다중상속을 통해 가져올 수 있음 물론 import 필요
     
     

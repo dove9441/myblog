@@ -42,10 +42,34 @@ class CommentDeleteView(DeleteView):
     
 
 # 익명 댓글 Views
-class AnonymousCommentCreationForm(CreateView):
+class AnonymousCommentCreateView(CreateView):
     model = AnonymousComment
     form_class = AnonymousCommentCreationForm
     template_name = 'commentapp/anonymouscreate.html' #추후 위의 create.html과 login 상태 확인하여 다르게 표시하는 형태로 통합할 것
+
+    def form_valid(self,form):
+        temp_comment = form.save(commit=False)
+        temp_comment.article = Article.objects.get(pk=self.request.POST['article_pk']) # input hidden으로 보낸 article_pk
+        temp_comment.writer = self.request.POST['writer']
+        temp_comment.password = self.request.POST['password']
+        temp_comment.save()
+        return super().form_valid(form)
+    
     
     def get_success_url(self):
         return reverse_lazy('articleapp:detail', kwargs={'pk' : self.object.article.pk })
+    
+    
+class AnonymousCommentDeleteView(DeleteView):
+    model = AnonymousComment
+    context_object_name = 'target_comment'
+    template_name = 'commentapp/anonymousdelete.html'
+    
+    def get_context_data(self, **kwargs):
+        object_list = AnonymousComment.objects.get(pk=self.object.pk).password
+        #print("target_object: ", object_list)
+        return super(AnonymousCommentDeleteView,self).get_context_data(target_comment_pw=object_list,**kwargs)
+    
+    
+    def get_success_url(self): 
+        return reverse_lazy('articleapp:detail', kwargs={'pk':self.object.article.pk})

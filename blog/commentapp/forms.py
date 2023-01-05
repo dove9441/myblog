@@ -18,7 +18,7 @@ class AnonymousCommentCreationForm(ModelForm):
     
     class Meta:
         model = AnonymousComment
-        fields = ['username', 'password', 'content']
+        fields = ['writer', 'password', 'content']
         
         
 #model, form 만들고 migration하기

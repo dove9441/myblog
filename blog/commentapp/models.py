@@ -15,9 +15,9 @@ class Comment(models.Model):
 #익명 댓글 기능 작성하기 related_name은 foreignKey를 사용한 곳애만 사용해야 한다.
 class AnonymousComment(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, null=False, related_name='anonymouscomment')
-    username = models.CharField(max_length=10, null=False)
+    writer = models.CharField(max_length=15, null=False)
     password = models.CharField(max_length=12, null=False)
     content = models.TextField(null=False)
-    created_at = models.DateTimeField(auto_now=False)
+    created_at = models.DateTimeField(auto_now=True)
     
 #model, form 만들고 migrate하기 

@@ -10,8 +10,16 @@
         
         
     }
+
+    
+    
+    .button_nav {
+        float:right;
+        margin-right: 1rem;
+    }
     
 </style>
+
 
 
 
@@ -52,6 +60,21 @@
                  | {{ target_article.created_at }}<br>
                 {{ target_article.updated_at }} 수정
             </h7>
+            
+            <!-- 수정, 삭제 버튼 영역-->
+             {% if user == target_article.writer %}
+            <div class="button_nav">
+                <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="material-icons" style="box-shadow:0 0 2px #ccc;text-align:right;
+                      background-color: #9cffe4;">
+                edit_square
+                </a>
+                 &nbsp
+                <a class="material-icons" style="box-shadow:0 0 2px #ccc;text-align:right;
+                      background-color: #ff9c9c;" href="{% url 'articleapp:delete' pk=target_article.pk %}">
+                delete_forever
+                </a>
+            </div>
+            {% endif %}
         </div>
         
         
@@ -82,14 +105,19 @@
         <!-- comment list 부분-->
         {% for comment in target_article.comment.all %}
             {% include 'commentapp/detail.html' with comment=comment %}
-        
         {% endfor %}
         
+        {% for anonymouscomment in target_article.anonymouscomment.all %}
+            {% include 'commentapp/detail.html' with comment=anonymouscomment %}
+        {% endfor %}
 
         
         <!-- comment create 부분-->
+        {% if user.is_authenticated %}
         {% include 'commentapp/create.html' with article=target_article %}
+        {% else %}
         {% include 'commentapp/anonymouscreate.html' with article=target_article %}
+        {% endif %}
     
         
     </div>
