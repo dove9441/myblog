@@ -1,0 +1,12 @@
+<!-- templates/login.html -->
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+        <a href="{% url 'social:begin' 'instagram' %}"><img src="{% static 'icons/instagram.svg' %}"></a>
+        <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'icons/facebook.svg' %}"></a>
+    </div>
+</div>
+{% endblock %}

@@ -57,6 +57,10 @@ INSTALLED_APPS = [
     'projectapp',
     'subscribeapp',
     'tinymce', #tinymce 사용
+    'socialauth', #이것과 아래 1개는 소셜 로그인을 위한 앱 #https://morioh.com/p/3180f4e88887 참고
+    'social_django',
+    'sslserver', #authcanceled 오류가 ssl서버를 사용하지 않아서 그런 건가??
+    
     
 ]
 
@@ -69,6 +73,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'blog.urls'
 
@@ -83,10 +89,19 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 소셜 로그인 시 사용자 정보를 추가로 가져오기 위한 추가
+                'social_django.context_processors.backends', # add this
+                'social_django.context_processors.login_redirect', # add this
             ],
         },
     },
 ]
+
+
+
+
+
+
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
@@ -151,6 +166,41 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login') #로그아웃 시 윗줄의 LOGIN_REDIRECT_URL로 이동. 여기서 또 hello_world로 이동한다. 결국 로그인, 로그아웃 시 모두 hello_world로 이동.
+
+
+#소셜 로그인을 위한 추가
+#LOGIN_URL = 'login'
+#LOGOUT_URL = 'logout'
+
+#이거 추가하니까 됐다 !!!!
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True 
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = "1547573535754510"    # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = "4107a848e8e4fa99f66c73c59c0b7c79"  # App Secret
+
+SOCIAL_AUTH_INSTAGRAM_KEY = "444554391100080"
+SOCIAL_AUTH_INSTAGRAM_SECRET = "48f1ff92d6080dcfa0c3c5e56086ac65"
+
+
+SOCIAL_AUTH_FACEBOOK_API_VERSION = '15.0'
+
+
+SOCIAL_AUTH_INSTAGRAM_AUTH_EXTRA_ARGUMENTS = {'scope': 'likes comments relationships'}
+
+
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.linkedin.LinkedinOAuth2',
+    'social_core.backends.instagram.InstagramOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# 여기까지 소셜 로그인을 위한 추가
+
 
 
 
