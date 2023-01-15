@@ -3,7 +3,7 @@ body{
 }
 
 .dove_logo{
-    margin: 0 0 0 1.5rem; /* 높이 조절은 dove_header에서 해야 한다 */
+    margin: 0 0.5rem 0 1.5rem; /* 높이 조절은 dove_header에서 해야 한다 */
     font-family: 'Comfortaa', cursive;
     /*font-family: 'Lobster', cursive; */
     display: inline;
