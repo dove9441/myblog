@@ -1,12 +1,17 @@
 <!-- templates/login.html -->
 {% load static %}
-
+{% load socialaccount %}
 
 {% block content %}
 <div class="row">
     <div class="col-md-8 mx-auto social-container my-2 order-md-1">
-        <a href="{% url 'social:begin' 'instagram' %}"><img src="{% static 'icons/instagram.svg' %}"></a>
-        <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'icons/facebook.svg' %}"></a>
+        <a href="{% url 'social:begin' 'instagram' %}"><img src="{% static 'icons/instagram.svg' %}"><!--using social-app-django--></a>
+        <!--<a href="{% provider_login_url 'instagram' method='oauth2' %}"><img src="{% static 'icons/instagram.svg' %}">using allauth</a> <br>-->
+        <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'icons/facebook.svg' %}"><!--using social-app-django--></a>
+        <!--<a href="{% provider_login_url 'facebook' method='oauth2' %}"><img src="{% static 'icons/facebook.svg' %}">using allauth</a>-->
     </div>
+    <h6 style="color:gray">
+        instagram 로그인은 개발 중에 있습니다.
+    </h6>
 </div>
 {% endblock %}

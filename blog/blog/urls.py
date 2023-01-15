@@ -20,7 +20,6 @@ from django.conf.urls.static import static #static 안의 static이다
 from django.conf import settings
 from articleapp.views import ArticleListView
 
-
 urlpatterns = [
     path('', ArticleListView.as_view(), name='home'),
     
@@ -34,6 +33,8 @@ urlpatterns = [
     #소셜 로그인 앱
     path('socialauth/', include('socialauth.urls')),
     path('social-auth/', include('social_django.urls', namespace="social")), #이건 꼭 최상위 urls.py에 써줘야 한다.
+    #allauth
+    path('accounts/', include('allauth.urls')),
     
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

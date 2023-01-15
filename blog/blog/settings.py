@@ -60,8 +60,17 @@ INSTALLED_APPS = [
     'socialauth', #이것과 아래 1개는 소셜 로그인을 위한 앱 #https://morioh.com/p/3180f4e88887 참고
     'social_django',
     'sslserver', #authcanceled 오류가 ssl서버를 사용하지 않아서 그런 건가??
-    
-    
+    #아래는 allauth 관련 앱
+    # migrate 할 때 필요
+    'django.contrib.sites',   
+    # Django-allauth 관련 앱
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 사용하고자할 provider 목록  필자는 프로젝트를 진행하면서 Google과 facebook 을 시도해보았다.
+    'allauth.socialaccount.providers.google', 
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.instagram',
 ]
 
 MIDDLEWARE = [
@@ -92,6 +101,8 @@ TEMPLATES = [
                 # 소셜 로그인 시 사용자 정보를 추가로 가져오기 위한 추가
                 'social_django.context_processors.backends', # add this
                 'social_django.context_processors.login_redirect', # add this
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -174,6 +185,7 @@ LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login') #로그아웃 시 윗줄�
 
 #이거 추가하니까 됐다 !!!!
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True 
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='https' # allauth전용
 
 
 SOCIAL_AUTH_FACEBOOK_KEY = "1547573535754510"    # App ID
@@ -186,7 +198,6 @@ SOCIAL_AUTH_INSTAGRAM_SECRET = "48f1ff92d6080dcfa0c3c5e56086ac65"
 SOCIAL_AUTH_FACEBOOK_API_VERSION = '15.0'
 
 
-SOCIAL_AUTH_INSTAGRAM_AUTH_EXTRA_ARGUMENTS = {'scope': 'likes comments relationships'}
 
 
 
@@ -195,10 +206,15 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.instagram.InstagramOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    #allauth 추가
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
 ]
 
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SITE_ID = 2 #allauth 추가
 # 여기까지 소셜 로그인을 위한 추가
 
 
