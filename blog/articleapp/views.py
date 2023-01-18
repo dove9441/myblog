@@ -76,4 +76,7 @@ class ArticleListView(ListView):
     template_name = 'articleapp/list.html'
     ordering = ['-created_at']
     paginate_by = 15 #paginate_by는 한 목록에 몇 개의 글을 보여줄지를 결정한다.
-    
+    #오류 해결을 위한 퀴리문 작성
+    #er = Article.objects.get(pk="43").title
+    #Article.objects.get(pk="43").delete()
+    #print(" ############################## 해당 쿼리 : ",er)
