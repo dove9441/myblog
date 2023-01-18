@@ -3,11 +3,17 @@
 
 {% block content %}
     <style>
+        /* 모바일을 위한 미디어 쿼리  */
+        @media screen and (max-width:600px) {
         
+            body {
+                font-family: 'Noto Sans KR', sans-serif !important;
+            }
+        /* grid 표시 css */
         .container {
             padding: 0;
             margin:0 auto;
-            display: block;
+            display: none;
         }
         
         
@@ -29,8 +35,7 @@
         }
         
         
-        /* 모바일을 위한 미디어 쿼리  */
-        @media screen and (max-width:600px) {
+        /* list 표시 css */
         .container_list { 
             padding: 0;
             margin: 0 auto;
@@ -46,11 +51,12 @@
         .container_list img{
             width:100%;
             height:100%;
-            object-fit:cover;
+            object-fit:contain;
             border-radius:0.5rem;
         }
             
         .container_list .image_div{
+            background-color: black;
             height:100%;
             width: 7rem;
             position:absolute;
@@ -68,53 +74,75 @@
         .container_list .contents_div p, .container_list .contents_div span{
             font-size: x-small !important;
         }
+        
+        
+        /* postcard 표시 css */
             
+        .container_postcard { 
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        .container_postcard .postcard_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+            width: 27.53rem;
+            height: 30.46rem;
+            border-radius: 0.3rem;
+            margin: 1rem auto;
+            background-color : white;
+            box-shadow : rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+        }
+        
+            
+        .container_postcard img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            border-radius:0.3rem;
+        }
+            
+        .container_postcard .image_div{
+            background-color: black;
+            height: 14.37rem;
+            width: 100%;
+            position:absolute;
+            top: 0;
+            left:0;
+        }
+            
+        .container_postcard .contents_div{
+            padding:2rem 1rem;
+            position: absolute;
+            top: 14.37rem;
+            left: 0;
+            height: calc(100% - 14.37rem - 3.46rem); /* 덧셈 뺄샘 양쪽엔 꼭 공백이 있어야 한다*/ 
+            width: 100%;
+            font-size: x-small;
+            overflow: hidden;
+        }
+
+        
+        .container_postcard .contents_div p, .container_postcard .contents_div span{
+            font-size:small;
+        }
+            
+        
+        .container_postcard .writerzone{
+            width : 100%;
+            height : 3.46rem;
+            position : absolute;
+            bottom : 0;
+            left : 0;
+            border-top : 0.5px solid black;
+            padding: 0.7rem;
+        }
         
 }
         
         
         /* pc를 위한 미디어 쿼리 */
-        @media screen and (min-width:600px) {
-        .container_list { 
-            padding: 0;
-            margin: 0 auto;
-            display: none;
-        }
         
-        .container_list .list_div{
-            padding: 0.5rem 1rem;
-            position:relative;
-        }
-        
-            
-        .container_list img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            border-radius:0.5rem;
-        }
-            
-        .container_list .image_div{
-            height:100%;
-            width: 7rem;
-            position:absolute;
-            top: 0;
-            right:1rem;
-        }
-            
-        .container_list .contents_div{
-            margin-top: 0.8rem;
-            height: 100%;
-            width: calc(100% - 7rem);
-            font-size: x-small !important;
-        }
-        
-        .container_list .contents_div p, .container_list .contents_div span{
-            font-size: x-small !important;
-        }
-            
-        
-}
         
         
     </style>
@@ -132,6 +160,17 @@
         document.getElementById('list').style.display = "block";
         document.getElementById('listselect').style.backgroundColor = "#f2f2f2";
         document.getElementById('grid').style.display = "none";
+        document.getElementById('gridselect').style.backgroundColor = "white";
+    }
+    
+    function postcardview(){
+        document.getElementById('postcard').style.display = "block";
+        document.getElementById('postselect').style.backgroundColor = "#f2f2f2";
+        
+        document.getElementById('grid').style.display = "none";
+        document.getElementById('gridselect').style.backgroundColor = "white";
+        
+        document.getElementById('list').style.display = "none";
         document.getElementById('gridselect').style.backgroundColor = "white";
     }
 
@@ -210,6 +249,27 @@
     </div>
     {% endif %}
     
+
+    <!-- postcard 형식으로 표시 -->
+    {% if article_list %} <!--article_list가 존재한다면-->
+    <div class="container_postcard" id="postcard">
+        {% for article in article_list %} <!-- view에서 context_object_name이다 최신이 위로-->    
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/article_list_postcard.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+        </a>
+        {% endfor %}
+    </div>
+    <!-- <script src="{% static 'js/magicgrid.js' %}"></script> -->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+
+
+
 
 
 <!-- pagination, create 영역 -->

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Comment(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True, related_name='comment') #Article 객체를 사용할 수 있게 연결, 글 삭제 시 댓글 db도 삭제되개.
-    writer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='comment')
+    writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='comment')
     content = models.TextField(null=False) #댓글은 무조건 뭐라도 작성 필요
     created_at = models.DateTimeField(auto_now=True)
     
