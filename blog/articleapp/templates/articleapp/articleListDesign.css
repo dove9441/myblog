@@ -1,0 +1,283 @@
+ 
+<style>
+/* 모바일을 위한 미디어 쿼리  */
+    @media screen and (max-width:600px) {
+        
+            body {
+                font-family: 'Noto Sans KR', sans-serif !important;
+            }
+        /* grid 표시 css */
+        .container {
+            padding: 0;
+            margin:0 auto;
+            display: none;
+        }
+        
+        
+        .container a{
+            width: 45%;
+            max-width: 250px;
+        }
+        
+        .container div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1rem;
+        }
+        
+        .container img {
+            width:100%;
+            border-radius:1rem;
+        }
+        
+        
+        /* list 표시 css */
+        .container_list { 
+            padding: 0;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .container_list .list_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+        }
+        
+            
+        .container_list img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            border-radius:0.5rem;
+        }
+            
+        .container_list .image_div{
+            background-color: black;
+            height:100%;
+            width: 7rem;
+            position:absolute;
+            top: 0;
+            right:1rem;
+        }
+            
+        .container_list .contents_div{
+            margin-top: 0.8rem;
+            height: 100%;
+            width: calc(100% - 7rem);
+            font-size: x-small !important;
+        }
+        
+        .container_list .contents_div p, .container_list .contents_div span{
+            font-size: x-small !important;
+        }
+        
+        
+        /* postcard(grid) 표시 css */
+            
+        .container_postcard { 
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        .container_postcard .postcard_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+            width: 27.53rem;
+            height: 30.46rem;
+            border-radius: 0.3rem;
+            margin: 1rem auto;
+            background-color : white;
+            box-shadow : rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+        }
+        
+            
+        .container_postcard img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            border-radius:0.3rem;
+        }
+            
+        .container_postcard .image_div{
+            background-color: black;
+            height: 14.37rem;
+            width: 100%;
+            position:absolute;
+            top: 0;
+            left:0;
+        }
+            
+        .container_postcard .contents_div{
+            padding:2rem 1rem;
+            position: absolute;
+            top: 14.37rem;
+            left: 0;
+            height: calc(100% - 14.37rem - 2.5rem); /* 덧셈 뺄샘 양쪽엔 꼭 공백이 있어야 한다*/ 
+            width: 100%;
+            font-size: x-small;
+            overflow: hidden;
+        }
+
+        
+        .container_postcard .contents_div p, .container_postcard .contents_div span{
+            font-size:small;
+        }
+            
+        
+        .container_postcard .writerzone{
+            width : 100%;
+            height : 2.5rem;
+            position : absolute;
+            bottom : 0;
+            left : 0;
+            border-top : 0.3px solid #eee;
+            padding: 0.7rem;
+            line-height : 1rem;
+        }
+        
+        
+        
+}
+        
+        
+        /* pc를 위한 미디어 쿼리 */
+    @media screen and (min-width:600px) {
+        body {
+                font-family: 'Noto Sans KR', sans-serif !important;
+            }
+        /* grid 표시 css */
+        .container {
+            padding: 0;
+            margin:0 auto;
+            display: none;
+        }
+        
+        
+        .container a{
+            width: 45%;
+            max-width: 250px;
+        }
+        
+        .container div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1rem;
+        }
+        
+        .container img {
+            width:100%;
+            border-radius:1rem;
+        }
+        
+        
+        /* list 표시 css */
+        .container_list { 
+            padding: 0;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .container_list .list_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+        }
+        
+            
+        .container_list img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            border-radius:0.5rem;
+        }
+            
+        .container_list .image_div{
+            background-color: black;
+            height:100%;
+            width: 7rem;
+            position:absolute;
+            top: 0;
+            right:1rem;
+        }
+            
+        .container_list .contents_div{
+            margin-top: 0.8rem;
+            height: 100%;
+            width: calc(100% - 7rem);
+            font-size: x-small !important;
+        }
+        
+        .container_list .contents_div p, .container_list .contents_div span{
+            font-size: x-small !important;
+        }
+        
+        
+        /* postcard(grid) 표시 css */
+            
+        .container_postcard { 
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        .container_postcard .postcard_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+            width: 27.53rem;
+            height: 30.46rem;
+            border-radius: 0.3rem;
+            margin: 1rem auto;
+            background-color : white;
+            box-shadow : rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+        }
+        
+            
+        .container_postcard img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            border-radius:0.3rem;
+        }
+            
+        .container_postcard .image_div{
+            background-color: black;
+            height: 14.37rem;
+            width: 100%;
+            position:absolute;
+            top: 0;
+            left:0;
+        }
+            
+        .container_postcard .contents_div{
+            padding:2rem 1rem;
+            position: absolute;
+            top: 14.37rem;
+            left: 0;
+            height: calc(100% - 14.37rem - 2.5rem); /* 덧셈 뺄샘 양쪽엔 꼭 공백이 있어야 한다*/ 
+            width: 100%;
+            font-size: x-small;
+            overflow: hidden;
+        }
+
+        
+        .container_postcard .contents_div p, .container_postcard .contents_div span{
+            font-size:small;
+        }
+            
+        
+        .container_postcard .writerzone{
+            width : 100%;
+            height : 2.5rem;
+            position : absolute;
+            bottom : 0;
+            left : 0;
+            border-top : 0.3px solid #eee;
+            padding: 0.7rem;
+            line-height : 1rem;
+        }
+        
+        
+        
+}
+
+</style>
