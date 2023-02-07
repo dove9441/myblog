@@ -218,6 +218,15 @@
         .container_postcard { 
             padding: 0;
             margin: 0 auto;
+            display : grid;
+            grid-template-columns: 27.53rem 27.53rem 27.53rem;
+            grid-template-rows: repeat(5,30.46rem); /* views.py의 paginate_by 고려하여 짤 것 */
+            gap : 3rem 5rem; /* 오타라고 뜨는데 이게 맞다 */
+            justify-content : center; /* align-content는 세로축, justify-content는 가로축 정렬이다 */
+        }
+        
+        .container_postcard a { 
+            display : contents;
         }
         
         .container_postcard .postcard_div{
@@ -274,6 +283,7 @@
             border-top : 0.3px solid #eee;
             padding: 0.7rem;
             line-height : 1rem;
+            font-size : 0.8rem;
         }
         
         
