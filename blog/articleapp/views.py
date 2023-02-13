@@ -8,6 +8,9 @@ from articleapp.decorators import *
 from django.views.generic.edit import FormMixin
 from commentapp.forms import *
 
+#댓글 정렬을 위한 import
+from itertools import chain
+from operator import itemgetter, attrgetter
 
 # Create your views here.
 
@@ -33,13 +36,38 @@ class ArticleDetailView(DetailView, FormMixin): #detailview에서 comment의 for
     template_name = 'articleapp/detail.html'
     context_object_name = 'target_article'
     
+    
     def get_form_class(self):
+        #댓글 작성 폼 반환
         if self.request.user.is_authenticated:
             return CommentCreationForm
         else:
             return AnonymousCommentCreationForm
     #form_class = AnonymousCommentCreationForm
     #form_class = CommentCreationForm #다중상속을 통해 가져올 수 있음 물론 import 필요
+    
+    
+    def get_context_data(self, **kwargs):
+        ## 댓글 정렬 테스트
+        normal_comments = self.object.comment.all()
+        anonymous_comments = self.object.anonymouscomment.all()
+        all_comments = list(chain(normal_comments, anonymous_comments))
+        # print('all_comments : ' , all_comments)
+        # for i in all_comments:
+        #     print(i.created_at)
+        
+        #정렬 (오래된 순(시간 값이 작은 오름차순으로))
+        sorted_comments = sorted(all_comments, key=attrgetter('created_at')) 
+        # print('sorted_comments : ', sorted_comments)
+        # for i in sorted_comments:
+        #     print(i.created_at)
+        return super(ArticleDetailView, self).get_context_data(sorted_comments=sorted_comments, **kwargs)
+        
+    
+    
+    
+    
+        
     
     
     
@@ -53,7 +81,6 @@ class ArticleUpdateView(UpdateView):
     form_class = ArticleCreationForm
     template_name = 'articleapp/update.html'
     context_object_name = 'target_article'
-    
     def get_success_url(self):
         return reverse_lazy('articleapp:detail', kwargs={'pk' : self.object.pk}) 
     

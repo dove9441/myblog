@@ -143,14 +143,15 @@
         {% endif %}
         
         <hr>
-        <!-- comment list 부분-->
-        {% for comment in target_article.comment.all %}
+        
+        
+        <!-- 정렬된 comment list -->
+        {% for comment in sorted_comments %}
             {% include 'commentapp/detail.html' with comment=comment %}
         {% endfor %}
         
-        {% for anonymouscomment in target_article.anonymouscomment.all %}
-            {% include 'commentapp/detail.html' with comment=anonymouscomment %}
-        {% endfor %}
+        
+        
 
         
         <!-- comment create 부분-->

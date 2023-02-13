@@ -27,10 +27,10 @@
             <!-- profile이 없으나 로그인된 계정이라 id가 있을 경우 -->
             {% if coment.writer.username %}
                 <strong>{{ comment.writer.username }}</strong>
-                <br> <!-- 자동 줄바꿈을 막기 위해 작성하는 특수공백문자 &nbsp&nbsp&nbsp-->
+                <br> 
             {% else %}
                 <strong>{{ comment.writer }}</strong>
-                <br> <!-- 자동 줄바꿈을 막기 위해 작성하는 특수공백문자 &nbsp&nbsp&nbsp-->
+                <br> 
             {% endif %}
             {{ comment.created_at }}
         {% endif %}

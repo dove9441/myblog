@@ -25,38 +25,10 @@
             {% bootstrap_form form %}
             
             
-            <input type="submit" class="btn btn-dark mt-3" value="저장">
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="저장">
             <input type="hidden" name="article_pk" value="{{ article.pk }}"> <!-- article을 articleapp의 detail.html에서 with로 보내줬다-->
         </form>
     </div>
-
-<!--시작-->
-<form action="{% url 'commentapp:anonymouscreate' %}" method="post">
-    {% csrf_token %}
-    <div class="card mb-2">
-        <div class="card-header bg-light">
-        <i class="fa fa-comment fa"></i> Comments
-        </div>
-        <div class="card-body">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                <div class="form-inline mb-2">
-                    <label for="replyId"><i class="fa fa-user-circle-o fa-2x"></i></label>
-                    {{ form.writer }}
-                    <label for="replyPassword" class="ml-4"><i class="fa fa-unlock-alt fa-2x"></i></label>
-                    {{ form.password }}
-                </div>
-                    {{ form.content }}
-                <button type="submit" class="btn btn-dark mt-3">post</button>
-                <input type="hidden" name="article_pk" value="{{ article.pk }}"> <!-- article을 articleapp의 detail.html에서 with로 보내줬다-->
-                </li>
-            </ul>
-        </div>
-    </div>
-</form>
-
-
-
 
 <script>var editor = new MediumEditor('.editable');</script>
 {% endblock %}

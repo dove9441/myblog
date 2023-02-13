@@ -20,6 +20,29 @@ class AnonymousCommentCreationForm(ModelForm):
         model = AnonymousComment
         fields = ['writer', 'password', 'content']
         
+        widgets = {
+            'writer' : forms.TextInput(
+                attrs = {
+                    'class' : 'form-control ml-2'
+                }
+            ),
+            
+            'password' : forms.TextInput(
+                attrs = {
+                    'class' : 'form-control ml-2'
+                }
+            ),
+            
+            'content' : forms.Textarea(
+                attrs = {
+                    'class' : 'form-control'
+                }
+            )
+        }
         
+            
+            
+            
+
 #model, form 만들고 migration하기
         

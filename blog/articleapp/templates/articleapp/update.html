@@ -24,17 +24,20 @@
     language: "ko_KR",
       selector: 'textarea',
         content_style: "body { line-height: 2.5; }",
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-      toolbar: 'codesample bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | blocks fontsize | undo redo | removeformat',
-      //   plugins:'codesample',
-      // // plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-      // toolbar: 'codesample bold italic underline strikethrough | link image media table | checklist numlist bullist | align lineheight |  blocks fontsize | removeformat',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-      mergetags_list: [
-        { value: 'First.Name', title: 'First Name' },
-        { value: 'Email', title: 'Email' },
-      ],
+     plugins: 'code anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+      toolbar: 'code codesample bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | blocks fontsize | undo redo | removeformat',
+        codesample_languages: [
+    { text: 'HTML/XML', value: 'markup' },
+    { text: 'JavaScript', value: 'javascript' },
+    { text: 'CSS', value: 'css' },
+    { text: 'PHP', value: 'php' },
+    { text: 'Ruby', value: 'ruby' },
+    { text: 'Python', value: 'python' },
+    { text: 'Java', value: 'java' },
+    { text: 'C', value: 'c' },
+    { text: 'C#', value: 'csharp' },
+    { text: 'C++', value: 'cpp' }
+  ],
     });
   </script>
 {% endblock %}
