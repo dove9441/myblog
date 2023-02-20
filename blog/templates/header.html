@@ -1,6 +1,8 @@
+{% load static %}
 <div class="dove_header">
     <!-- 타이틀 영역-->
     <div class="dove_logo">
+        <i><img src="{% static 'icons/favicon.svg' %}"></i>
         <h2><a href="{% url 'home' %}">riddle</a></h2>
     </div>
     <!-- rem은 상위 요소의 상대적 크기로 지정. body의 상대적 크기로 각 영역을 나누고 (이번엔 10, 20 ,10이다)내용을 채워넣는다. rem을 적극 이용하자. 나머지 여백 조정 등을 한다.-->

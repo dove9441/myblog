@@ -55,7 +55,6 @@ class ArticleDetailView(DetailView, FormMixin): #detailview에서 comment의 for
         # print('all_comments : ' , all_comments)
         # for i in all_comments:
         #     print(i.created_at)
-        
         #정렬 (오래된 순(시간 값이 작은 오름차순으로))
         sorted_comments = sorted(all_comments, key=attrgetter('created_at')) 
         # print('sorted_comments : ', sorted_comments)
@@ -67,7 +66,6 @@ class ArticleDetailView(DetailView, FormMixin): #detailview에서 comment의 for
     
     
     
-        
     
     
     

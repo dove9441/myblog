@@ -1,51 +1,46 @@
 {% load static %}
-<div style="border:1px solid;
-            text-align:left;
-            padding:4%;
-            margin:1rem 0;
-            border-radius: 1rem;
-            border-color: #bbb;">
-    <div>
-        <!-- 로그인된 사용자의 댓글일 경우 -->
-        {% if comment.writer.profile %}
-            <div style="object-fit:cover; width:10%; float:left; margin-right: 0.5rem; margin-bottom:0.5rem;">
-                    {% if comment.writer.profile.image %}
-                    <img src="{{ comment.writer.profile.image.url }}" style="border-radius:10rem; width:100%; height:100%;">
-                    {% else %}
-                    <img src="{% static 'icons/noprofileimage.png' %}" style="border-radius:10rem; width:100%; height: 100%;">
-                    {% endif %}
-                </div>
-            <strong>{{ comment.writer.profile.nickname }}</strong>
-            <br> <!-- 자동 줄바꿈을 막기 위해 작성하는 특수공백문자 &nbsp&nbsp&nbsp-->
-            {{ comment.created_at }}
+
+<style>
+    .d-flex img {
+            border-radius : 10rem;
+            width:3rem;
+            height:3rem;
+        }
+</style>
+
+<div class="d-flex">
+    <div class="flex-fill">
+        <div class="card mt-2">
+            <div class="card-header">
+                <table>
+                    <tr class="align-middle">
+                        {% if comment.writer.username %}
+                            {% if comment.writer.profile %}
+                        <td rowspan="2" class="pr-2"><img src="{{ comment.writer.profile.image.url }}"></td>
+                        <td class="ml" style="text-align: left;">{{ comment.writer.profile.nickname }}</td>
+                            {% else %}
+                        <td rowspan="2" class="pr-2"><i class="fa fa-user-o fa-2x"></i></td>
+                        <td class="ml" style="text-align: left;">{{ comment.writer.username }}</td>
+                            {% endif %}
+                        {% else %}sdsd
+                        <td rowspan="2" class="pr-2"><i class="fa fa-user-o fa-2x"></i></td>
+                        <td class="ml" style="text-align: left;">{{ comment.writer }}</td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td>
+                            <font size="2">{{ comment.created_at }}</font> 
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-body" style="text-align: left;">
+                <p class="card-text">{{ comment.content | safe }}</p>
         
-        {% else %}
-        <!-- 익명 댓글일 경우-->
-        <div style="object-fit:cover; width:10%; float:left; margin-right: 0.5rem; margin-bottom:0.5rem;">
-                    <img src="{% static 'icons/noprofileimage.png' %}" style="border-radius:10rem; width:100%; height: 100%;">
-                </div>
-            <!-- profile이 없으나 로그인된 계정이라 id가 있을 경우 -->
-            {% if coment.writer.username %}
-                <strong>{{ comment.writer.username }}</strong>
-                <br> 
-            {% else %}
-                <strong>{{ comment.writer }}</strong>
-                <br> 
-            {% endif %}
-            {{ comment.created_at }}
-        {% endif %}
-    </div>
-    
-    
-    
-    <div style="margin: 1rem 0;">
-        {{ comment.content | safe }} <!-- safe 적어야 html태그는 제외되고 plain text만 표시-->
-    </div>
-    
-    <!-- 로그인된 사용자의 댓글일 경우 -->
-    <!-- articleapp/detail.html에서 일반/익명 댓글 모두 comment라는 인자로 넘겨준다.-->
-    <!-- comment.writer.username이 존재하면 일반 유저의 댓글, 없으면 익명 댓글로 취급-->
-    {% if comment.writer.username %}
+                
+            
+                {% if comment.writer.username %}
         {% if comment.writer == user %}
         <div style="text-align: right;">
             <a href="{% url 'commentapp:delete' pk=comment.pk %}" class="btn btn-danger">삭제</a> <!-- url 'app:#'  쓰려면 urls.py에 추가하기-->
@@ -57,6 +52,11 @@
             <a href="{% url 'commentapp:anonymousdelete' pk=comment.pk %}" class="btn btn-danger">삭제</a> <!-- url 'app:#'  쓰려면 urls.py에 추가하기-->
         </div>
     {% endif %}
+                
+                
+                
 
-    
+            </div>
+        </div>
+    </div>
 </div>

@@ -146,9 +146,20 @@
         
         
         <!-- 정렬된 comment list -->
-        {% for comment in sorted_comments %}
-            {% include 'commentapp/detail.html' with comment=comment %}
-        {% endfor %}
+        <div class="card-header bg-light">
+            <i class="fa-solid fa-comments"></i>&nbspComments
+        </div>
+        
+        <!-- 댓글이 있을 때 없을 때 구분 -->
+        {% if sorted_comments %}
+            {% for comment in sorted_comments %}
+                {% include 'commentapp/detail.html' with comment=comment %}
+            {% endfor %}
+        {% else %}
+            <div style="height: 8rem; text-align:center;">
+                <h6 style=" line-height:8rem;"><i>첫 댓글을 남겨 보세요!</i> </h6>  
+            </div>
+        {% endif %}
         
         
         
@@ -164,7 +175,6 @@
         
     </div>
 </div>
-
 
 
 

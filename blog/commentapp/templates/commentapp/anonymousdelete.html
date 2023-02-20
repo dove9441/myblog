@@ -4,19 +4,29 @@
 {% block content %}
 
 <script>
+    var isvalid = false;
     var password_check = function() {
         const user_input = document.getElementById("input_pw").value;
         console.log(user_input);
         if(user_input === "{{ target_comment_pw }}" ){ // 쌍따옴표 넣어야 한다. 괄호 내부는 그대로 치환한다
             document.getElementById('checkform').style.display = "block";
+            isvalid = true;
         }
         else{
             alert("비밀번호가 틀립니다.")
         }
     
-    }    
-
-
+    }
+    
+    function checkForm(){
+        let f = document.deleteform;
+        if(isvalid){
+            return true
+        }else{
+            alert('올바른 접근이 아닙니다.');
+            return false;
+        }
+    }
 
 </script>
 
@@ -29,7 +39,7 @@
         <input type="button" onclick="password_check()" class="btn btn-secondary" value="check">
         
         <div id="checkform" style="display:none;">
-            <form action="{% url 'commentapp:anonymousdelete' pk=target_comment.pk %}" method="post">
+            <form name="deleteform" onsubmit="return checkForm()" action="{% url 'commentapp:anonymousdelete' pk=target_comment.pk %}" method="post">
                 {% csrf_token %}
                 <input type="submit" class="btn btn-danger rounded-pill col-6 mt-3" value="삭제">
             </form>
