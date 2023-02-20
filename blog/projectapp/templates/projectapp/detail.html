@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 <!-- 화면 표시 스타일 -->
@@ -166,7 +166,7 @@
     
 <!-- 게시글 영역-->
 <div>
-    {% include 'snippets/article_list_viewselect.html' with article_list=object_list %}
+    {% include 'list.html' with article_list=object_list %}
 </div>
     
    

@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- 화면 표시 스타일 -->
+<script type="application/javascript">
+    function gridview(){
+        document.getElementById('list').style.display = "none";
+        document.getElementById('listselect').style.backgroundColor = "white";
+        document.getElementById('grid').style.display = "block";
+        document.getElementById('gridselect').style.backgroundColor = "#f2f2f2";
+    }
+    
+    function listview(){
+        document.getElementById('list').style.display = "block";
+        document.getElementById('listselect').style.backgroundColor = "#f2f2f2";
+        document.getElementById('grid').style.display = "none";
+        document.getElementById('gridselect').style.backgroundColor = "white";
+    }
+
+
+</script>
+
+<style>
+    @media screen and (max-width:600px) {
+        .container_list { 
+            padding: 0;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .container_list .list_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+        }
+        
+            
+        .container_list img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:0.5rem;
+        }
+            
+        .container_list .image_div{
+            height:100%;
+            width: 7rem;
+            position:absolute;
+            top: 0;
+            right:1rem;
+        }
+            
+        .container_list .contents_div{
+            margin-top: 0.8rem;
+            height: 100%;
+            width: calc(100% - 7rem);
+            font-size: x-small !important;
+        }
+        
+        .container_list .contents_div p, .container_list .contents_div span{
+            font-size: x-small !important;
+        }
+            
+        
+}
+    /* pc를 위한 미디어 쿼리.. 추후 수정 */
+    @media screen and (min-width:600px) {
+        .container_list { 
+            padding: 0;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .container_list .list_div{
+            padding: 0.5rem 1rem;
+            position:relative;
+        }
+        
+            
+        .container_list img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:0.5rem;
+        }
+            
+        .container_list .image_div{
+            height:100%;
+            width: 7rem;
+            position:absolute;
+            top: 0;
+            right:1rem;
+        }
+            
+        .container_list .contents_div{
+            margin-top: 0.8rem;
+            height: 100%;
+            width: calc(100% - 7rem);
+            font-size: x-small !important;
+        }
+        
+        .container_list .contents_div p, .container_list .contents_div span{
+            font-size: x-small !important;
+        }
+            
+        
+}
+    
+
+
+</style>
+
+
+
+
+<!-- 프로젝트 정보 영역-->
+<div style="text-align:center; max-width:500px; margin:4rem auto 2rem auto;">
+    
+    <img src="{{ target_project.image.url }}" alt="#" style="
+                                                             height:12rem;
+                                                             width:12rem;
+                                                             border-radius:20rem;
+                                                             margin-bottom:2rem;
+                                                             object-fit:cover;">
+    <h2 style="font-family:'NanumSqureB';">{{ target_project.title }}</h2>
+    
+    <h5 style="margin-bottom:1rem;">{{ target_project.description }}</h5>
+    
+    
+    <!-- 구독 영역-->
+    <div>
+        {% if user.is_authenticated %}
+            {% if not subscription %}
+            <a class="btn btn-primary rounded-pill px-4"
+               href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}">
+                Subscribe
+            </a>
+            {% else %}
+            <a class="btn btn-dark rounded-pill px-4"
+               href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}">
+            Unsubscribe
+            </a>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+    
+
+{% if user.is_authenticated %}
+<!-- 삭제 버튼 -->
+<div class="text-center mb-5">
+    <a class="btn btn-info rounded-pill px-4"
+               href="{% url 'projectapp:update' pk=target_project.pk %}">
+                수정
+    </a>
+    <a class="btn btn-danger rounded-pill px-4"
+               href="{% url 'projectapp:delete' pk=target_project.pk %}">
+                삭제
+    </a>
+</div>
+{% endif %}
+
+
+
+
+    
+<!-- 게시글 영역-->
+<div>
+    {% include 'snippets/article_list_viewselect.html' with article_list=object_list %}
+</div>
+    
+   
+
+{% endblock %}

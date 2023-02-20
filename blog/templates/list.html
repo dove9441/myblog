@@ -1,0 +1,166 @@
+
+{% load static %} <!-- static 쓰려면 꼭 해줘야 함-->
+
+{% block content %}
+        
+<!-- CSS 불러오기 -->
+{% include 'articleapp/articleListDesign.css' %}
+
+<script type="application/javascript">
+    function photoview(){
+        document.getElementById('list').style.display = "none";
+        document.getElementById('listselect').style.backgroundColor = "white";
+        
+        document.getElementById('grid').style.display = "none";
+        document.getElementById('gridselect').style.backgroundColor = "white";
+        
+        document.getElementById('photo').style.display = "block";
+        document.getElementById('photoselect').style.backgroundColor = "#f2f2f2";
+        magicGrid.positionItems();
+        
+    }
+    
+    function listview(){
+        document.getElementById('list').style.display = "block";
+        document.getElementById('listselect').style.backgroundColor = "#f2f2f2";
+        
+        document.getElementById('grid').style.display = "none";
+        document.getElementById('gridselect').style.backgroundColor = "white";
+        
+        document.getElementById('photo').style.display = "none";
+        document.getElementById('photoselect').style.backgroundColor = "white";
+    }
+    
+    function gridview(){
+        document.getElementById('photo').style.display = "none";
+        document.getElementById('photoselect').style.backgroundColor = "white";
+        
+        document.getElementById('grid').style.display = "block";
+        document.getElementById('gridselect').style.backgroundColor = "#f2f2f2";
+        
+        document.getElementById('list').style.display = "none";
+        document.getElementById('gridselect').style.backgroundColor = "white";
+    }
+
+
+</script>
+<!-- 목록 표시 상단 영역-->  
+<hr>
+
+<div style="display:inline; margin:auto 1rem;">
+    <b>전체글</b>
+</div>
+
+<!-- 아이콘 내비게이션 바 -->
+
+<div style="display:inline; float:right; margin:auto 1rem;">
+    {% if user.is_authenticated %}
+    <a href="{% url 'articleapp:create' %}" class="material-icons" style="box-shadow:0 0 2px #ccc;text-align:right;
+              background-color: wtite;">
+        edit_square
+    </a>
+    {% endif %}
+    
+    <!-- gridview는 post형식 -->
+    <a href="javascript:void(0);" onclick="gridview()"
+       style="box-shadow:0 0 2px #ccc;text-align:right;
+              background-color: #f2f2f2;" class="material-icons" id="gridselect">
+        grid_view
+    </a>
+    
+    
+    <a href="javascript:void(0);" onclick="photoview();" style="box-shadow:0 0 2px #ccc;
+              text-align:right; background-color: white;" class="material-symbols-outlined" id="photoselect">
+        photo
+    </a>
+    
+    <a href="javascript:void(0);" onclick="listview();"
+       style="box-shadow:0 0 2px #ccc;
+              text-align:right;
+              background-color: white;" class="material-icons" id="listselect">
+        view_list
+    </a>
+</div>
+    
+<hr style="border: rgba(0,0,0,0);">
+
+
+    
+    <!-- grid로 표시(기본값) -->
+    
+    <!-- grid(postcard) 형식으로 표시 -->
+    {% if article_list %} <!--article_list가 존재한다면-->
+    <div class="container_postcard" id="grid">
+        {% for article in article_list %} <!-- view에서 context_object_name이다 최신이 위로-->    
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/article_list_postcard.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+        </a>
+        {% endfor %}
+    </div>
+    <!-- <script src="{% static 'js/magicgrid.js' %}"></script> -->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+
+
+    <!-- photo (magicGrid 사용)힌 형식으로 표시-->
+    {% if article_list %} <!--article_list가 존재한다면-->
+    <div class="container" id="photo">
+        {% for article in article_list %} <!-- view에서 context_object_name이다 최신이 위로-->    
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+        </a>
+        {% endfor %}
+    </div>
+    <script src="{% static 'js/magicgrid.js' %}"></script> <!-- container라는 클래스를 js에서 사용하므로 안에다가 넣어준다-->
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+
+    
+    
+    <!-- list로 표시 -->
+     {% if article_list %} 
+    <div class="container_list" id="list">
+        {% for article in article_list %}
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/list_article_card.html' with article=article %} 
+        </a>
+        <hr>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center;">
+        <h1>
+            게시글이 존재하지 않습니다.
+        </h1>    
+    </div>
+    {% endif %}
+    
+
+    
+
+
+
+
+
+<!-- pagination, create 영역 -->
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+    
+
+    <div style="text-align:center;">
+        <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill px-3 mt-3 mb-3">
+        새 글 작성하기
+        </a>
+    </div>
+
+
+{% endblock %}
