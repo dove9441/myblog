@@ -1,5 +1,64 @@
 {% load static %}
-<div class="dove_header">
+<style>
+    .header_sticky{
+        position: fixed;
+        top : 0rem;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 7%);
+        z-index : 1;
+        background-color : #f8f9fa;
+        width : 100%;
+
+    }
+    
+        .dove_header button {
+        display : none;
+          position:fixed;
+          top:15px;
+          right:20px;
+          background-color:#639;
+          padding:15px;
+          border:none;
+          outline: none;
+          color: white;    
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .dove_header button.active {
+          transform:translateX(-110px);
+
+        }
+        .dove_header nav {
+          position:fixed;
+          top:0;
+          right:0;
+          background-color:#639;  
+          height:100vh;
+          padding:2em;
+          transform:translateX(100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .dove_header nav.active {
+          transform:translateX(0);
+        }
+
+        .dove_header nav ul {  
+          padding:0;
+          margin:0;
+          list-style: none;
+        }
+
+        .dove_header nav ul li {
+          padding:1em 0;
+        }
+
+        .dove_header nav a {
+          color:white;
+          text-decoration: none;
+        }
+    </style>
+
+<div class="dove_header" id="site_header">
     <!-- 타이틀 영역-->
     <div class="dove_logo">
         <i><img src="{% static 'icons/favicon.svg' %}"></i>
@@ -41,5 +100,31 @@
     </div>
     
     
-    
+    <button class="material-symbols-outlined" id="navbtn" style="position:fixed; right: 1rem;">menu</button>
+    <nav id="navlist">
+        <ul>
+            <li>manu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </nav>
 </div>
+<script>
+    const navbtn = document.getElementById("navbtn");
+    const navlist = document.getElementById("navlist");
+    navbtn.addEventListener('click', ()=>{
+       navbtn.classList.toggle('active');
+        navlist.classList.toggle('active');
+    });
+    
+    // // 스크롤 감지해서 그림자 만들기
+    // window.addEventListener('scroll', (e)=>{
+    //    const header = document.getElementById('site_header');
+    //     if(window.pageYOffset > 0){
+    //         header.classList.add('header_sticky');
+    //     }else{
+    //         header.classList.remove('header_sticky');
+    //     }
+    // });
+</script>

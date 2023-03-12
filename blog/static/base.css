@@ -19,7 +19,7 @@ body {
 
 .dove_header{
     text-align:left;
-    margin:1rem 0;
+    margin : 1rem 0;
 }
 
 .dove_footer_btn{
@@ -43,6 +43,8 @@ img[src$=".gif"], img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]{
     transform: translateZ(0);
 }
 
+
+/* 모바일을 위한 미디어 쿼리 */
 @media screen and (max-width:500px) {
     html {
         font-size:13px;
