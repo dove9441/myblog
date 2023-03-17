@@ -92,7 +92,11 @@
     <div class="container_postcard" id="grid">
         {% for article in article_list %} <!-- view에서 context_object_name이다 최신이 위로-->    
         <a href="{% url 'articleapp:detail' pk=article.pk %}">
-            {% include 'snippets/article_list_postcard.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+            {% if article.image %}
+                {% include 'snippets/article_list_postcard.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+            {% else %}
+                {% include 'snippets/article_list_postcard_noimage.html' with article=article %}
+            {% endif %}
         </a>
         {% endfor %}
     </div>

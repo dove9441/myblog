@@ -105,3 +105,6 @@ class ArticleListView(ListView):
     #er = Article.objects.get(pk="43").title
     #Article.objects.get(pk="43").delete()
     #print(" ############################## 해당 쿼리 : ",er)
+    
+    #오류 해결을 위한 퀴리문 작성 2
+    #Article.objects.get(pk="71").delete()

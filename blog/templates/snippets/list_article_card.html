@@ -14,7 +14,9 @@
     
     <!-- 이미지 영역 -->
     <div class="image_div">
+        {% if article.image %}
         <img src="{{ article.image.url }}" alt="#">
+        {% endif %}
     </div>
     
     <!-- 작성자. 작성 일자 표시 -->
