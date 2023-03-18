@@ -35,7 +35,7 @@
         document.getElementById('photo').style.display = "none";
         document.getElementById('photoselect').style.backgroundColor = "white";
         
-        document.getElementById('grid').style.display = "block";
+        document.getElementById('grid').style.display = "grid";
         document.getElementById('gridselect').style.backgroundColor = "#f2f2f2";
         
         document.getElementById('list').style.display = "none";
@@ -93,7 +93,11 @@
     <div class="container_postcard" id="grid">
         {% for article in article_list %} <!-- view에서 context_object_name이다 최신이 위로-->    
         <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% if article.image %}
             {% include 'snippets/article_list_postcard.html' with article=article %} <!-- for문에 썼던 변수를 전달하기 위함(전달할 이름 = 전달할 내용)-->
+            {% else %}
+            {% include 'snippets/article_list_postcard_noimage.html' %}
+            {% endif %}
         </a>
         {% endfor %}
     </div>

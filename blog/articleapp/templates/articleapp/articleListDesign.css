@@ -3,9 +3,10 @@
 /* 모바일을 위한 미디어 쿼리  */
     @media screen and (max-width:600px) {
         
-            body {
-                font-family: 'Noto Sans KR', sans-serif !important;
-            }
+        body {
+            font-family: 'Noto Sans KR', sans-serif !important;
+            line-height : 2.5;
+        }
         /* grid 표시 css */
         .container {
             padding: 0;
@@ -136,6 +137,19 @@
             line-height : 1rem;
         }
         
+        .list_div img{
+            width:100%;
+            object-fit : cover;
+        }
+        
+        .list_div .contents_div{
+            overflow : hidden;
+        }
+
+        .list_div {
+            max-height : 13rem;
+        }
+        
         
         
 }
@@ -144,7 +158,8 @@
         /* pc를 위한 미디어 쿼리 */
     @media screen and (min-width:600px) {
         body {
-                font-family: 'Noto Sans KR', sans-serif !important;
+                font-family: 'Noto Sans KR', sans-serif !important;   
+                line-height : 2.5;
             }
         /* grid 표시 css */
         .container {
@@ -286,7 +301,18 @@
             font-size : 0.8rem;
         }
         
+        .list_div img{
+            width:100%;
+            object-fit : cover;
+        }
         
+        .list_div .contents_div{
+            overflow : hidden;
+        }
+
+        .list_div {
+            max-height : 13rem;
+        }
         
 }
 

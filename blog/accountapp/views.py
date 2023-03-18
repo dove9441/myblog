@@ -81,7 +81,8 @@ class AccountDetailView(DetailView,MultipleObjectMixin):
     
     def get_context_data(self, **kwargs):
         object_list = Article.objects.filter(writer=self.get_object()) #해당 project에 속해있는 articles를 가져오는 건데 이해는 잘 안 된다. Accountapp에서는 해당 account의 게시물이다.
-        return super(AccountDetailView,self).get_context_data(object_list=object_list,**kwargs)
+        ordered_list = Article.objects.order_by('-created_at')
+        return super(AccountDetailView,self).get_context_data(object_list=ordered_list,**kwargs)
     
 
 

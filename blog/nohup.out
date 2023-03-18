@@ -7221,3 +7221,535 @@ Not Found: /robots.txt
 [17/Mar/2023 22:09:51] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_R68yG1X.png HTTP/1.1" 200 966
 [17/Mar/2023 22:10:38] "GET / HTTP/1.1" 200 403349
 [17/Mar/2023 22:10:38] "GET / HTTP/1.1" 200 403349
+Watching for file changes with StatReloader
+[17/Mar/2023 23:26:19] "GET / HTTP/1.1" 200 643791
+[17/Mar/2023 23:26:21] "GET / HTTP/1.1" 200 643566
+[17/Mar/2023 23:26:22] "GET /articles/create/ HTTP/1.1" 200 17353
+[17/Mar/2023 23:26:22] "GET /articles/create/ HTTP/1.1" 302 0
+[17/Mar/2023 23:26:23] "GET /accounts/login/?next=/articles/create/ HTTP/1.1" 200 10455
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'projectapp.models.Project'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[17/Mar/2023 23:26:27] "GET /projects/list/ HTTP/1.1" 200 12649
+[17/Mar/2023 23:26:27] "GET /media/project/terminal.png HTTP/1.1" 200 2782
+[17/Mar/2023 23:26:27] "GET /media/project/cat.jpg HTTP/1.1" 200 6108
+[17/Mar/2023 23:26:27] "GET /media/project/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_lf8evFM.png HTTP/1.1" 200 4030
+[17/Mar/2023 23:26:27] "GET /media/project/exclamationmark.png HTTP/1.1" 200 3714
+[17/Mar/2023 23:26:27] "GET /media/project/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.png HTTP/1.1" 200 1991
+[17/Mar/2023 23:26:27] "GET /media/project/note.png HTTP/1.1" 200 6480
+[17/Mar/2023 23:26:28] "GET /projects/list/ HTTP/1.1" 200 12603
+[17/Mar/2023 23:26:30] "GET /projects/detail/6 HTTP/1.1" 200 353187
+[17/Mar/2023 23:26:32] "GET /projects/detail/6 HTTP/1.1" 200 352464
+[17/Mar/2023 23:26:35] "GET /projects/detail/6 HTTP/1.1" 200 353187
+[17/Mar/2023 23:26:37] "GET /articles/detail/41 HTTP/1.1" 200 80611
+[17/Mar/2023 23:26:37] "GET /articles/detail/41 HTTP/1.1" 200 79690
+[17/Mar/2023 23:26:38] "GET /articles/update/41 HTTP/1.1" 200 147479
+Forbidden: /articles/update/41
+[17/Mar/2023 23:26:39] "GET /articles/update/41 HTTP/1.1" 403 0
+[17/Mar/2023 23:26:44] "POST /articles/update/41 HTTP/1.1" 302 0
+[17/Mar/2023 23:26:44] "GET /articles/detail/41 HTTP/1.1" 200 80613
+[17/Mar/2023 23:26:46] "GET / HTTP/1.1" 200 643791
+[17/Mar/2023 23:26:48] "GET /projects/list/ HTTP/1.1" 200 12649
+[17/Mar/2023 23:26:49] "GET /projects/detail/6 HTTP/1.1" 200 349329
+[17/Mar/2023 23:26:52] "GET /articles/detail/35 HTTP/1.1" 200 35121
+[17/Mar/2023 23:26:53] "GET /articles/detail/35 HTTP/1.1" 200 34592
+[17/Mar/2023 23:26:53] "GET /articles/update/35 HTTP/1.1" 200 60893
+Forbidden: /articles/update/35
+[17/Mar/2023 23:26:54] "GET /articles/update/35 HTTP/1.1" 403 0
+[17/Mar/2023 23:26:57] "POST /articles/update/35 HTTP/1.1" 302 0
+[17/Mar/2023 23:26:57] "GET /articles/detail/35 HTTP/1.1" 200 35122
+[17/Mar/2023 23:26:58] "GET / HTTP/1.1" 200 643791
+[17/Mar/2023 23:26:59] "GET /projects/list/ HTTP/1.1" 200 12649
+[17/Mar/2023 23:27:01] "GET /projects/detail/6 HTTP/1.1" 200 345979
+[17/Mar/2023 23:27:04] "GET /projects/detail/16 HTTP/1.1" 200 180072
+[17/Mar/2023 23:27:06] "GET /projects/detail/16 HTTP/1.1" 200 179346
+[17/Mar/2023 23:27:08] "GET /projects/detail/6 HTTP/1.1" 200 345979
+[17/Mar/2023 23:27:11] "GET /articles/detail/45 HTTP/1.1" 200 45553
+[17/Mar/2023 23:27:12] "GET /articles/detail/45 HTTP/1.1" 200 45024
+[17/Mar/2023 23:27:13] "GET /articles/update/45 HTTP/1.1" 200 81921
+Forbidden: /articles/update/45
+[17/Mar/2023 23:27:14] "GET /articles/update/45 HTTP/1.1" 403 0
+[17/Mar/2023 23:27:16] "GET / HTTP/1.1" 200 643791
+[17/Mar/2023 23:27:17] "GET /articles/create/ HTTP/1.1" 200 17353
+[17/Mar/2023 23:29:50] "GET / HTTP/1.1" 200 643791
+[17/Mar/2023 23:29:53] "GET /articles/create/ HTTP/1.1" 200 17353
+[17/Mar/2023 23:31:02] "POST /articles/create/ HTTP/1.1" 302 0
+[17/Mar/2023 23:31:03] "GET /articles/detail/73 HTTP/1.1" 200 14383
+[17/Mar/2023 23:31:05] "GET / HTTP/1.1" 200 644138
+[17/Mar/2023 23:31:07] "GET /articles/detail/73 HTTP/1.1" 200 14383
+[17/Mar/2023 23:31:08] "GET /articles/detail/73 HTTP/1.1" 200 13854
+[17/Mar/2023 23:31:09] "GET / HTTP/1.1" 200 644138
+[17/Mar/2023 23:31:13] "GET /articles/detail/73 HTTP/1.1" 200 14383
+[17/Mar/2023 23:31:14] "GET /articles/update/73 HTTP/1.1" 200 17579
+Forbidden: /articles/update/73
+[17/Mar/2023 23:31:14] "GET /articles/update/73 HTTP/1.1" 403 0
+[17/Mar/2023 23:32:51] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:32:52] "GET /articles/detail/73 HTTP/1.1" 200 14645
+[17/Mar/2023 23:32:58] "GET / HTTP/1.1" 200 644342
+[17/Mar/2023 23:32:59] "GET /articles/detail/73 HTTP/1.1" 200 14645
+[17/Mar/2023 23:32:59] "GET / HTTP/1.1" 200 644117
+[17/Mar/2023 23:33:00] "GET /articles/update/73 HTTP/1.1" 200 18251
+[17/Mar/2023 23:34:43] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:34:43] "GET /articles/detail/73 HTTP/1.1" 200 14944
+[17/Mar/2023 23:34:46] "GET /articles/update/73 HTTP/1.1" 200 18893
+Not Found: /robots.txt
+[17/Mar/2023 23:36:00] "GET /robots.txt HTTP/1.1" 404 3337
+[17/Mar/2023 23:36:08] "GET / HTTP/1.1" 200 644117
+Forbidden: /articles/update/73
+[17/Mar/2023 23:36:17] "GET /articles/update/73 HTTP/1.1" 403 0
+[17/Mar/2023 23:36:24] "GET /articles/detail/72 HTTP/1.1" 200 133279
+[17/Mar/2023 23:36:41] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:36:42] "GET /articles/detail/73 HTTP/1.1" 200 15341
+[17/Mar/2023 23:36:42] "GET /articles/detail/73 HTTP/1.1" 200 14812
+[17/Mar/2023 23:36:45] "GET / HTTP/1.1" 200 644361
+[17/Mar/2023 23:36:47] "GET /articles/detail/73 HTTP/1.1" 200 15341
+[17/Mar/2023 23:36:48] "GET /articles/update/73 HTTP/1.1" 200 19899
+[17/Mar/2023 23:36:56] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:36:57] "GET /articles/detail/73 HTTP/1.1" 200 15341
+[17/Mar/2023 23:36:58] "GET / HTTP/1.1" 200 644356
+[17/Mar/2023 23:36:59] "GET /articles/detail/73 HTTP/1.1" 200 15341
+[17/Mar/2023 23:37:00] "GET /articles/update/73 HTTP/1.1" 200 19899
+[17/Mar/2023 23:37:10] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:37:10] "GET /articles/detail/73 HTTP/1.1" 200 15311
+[17/Mar/2023 23:37:12] "GET / HTTP/1.1" 200 644359
+[17/Mar/2023 23:37:15] "GET /articles/detail/73 HTTP/1.1" 200 15311
+[17/Mar/2023 23:37:16] "GET /articles/update/73 HTTP/1.1" 200 19775
+[17/Mar/2023 23:37:25] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:37:26] "GET /articles/detail/73 HTTP/1.1" 200 15311
+[17/Mar/2023 23:37:31] "GET / HTTP/1.1" 200 644359
+[17/Mar/2023 23:38:00] "GET /articles/detail/67 HTTP/1.1" 200 14419
+[17/Mar/2023 23:38:03] "GET /articles/detail/66 HTTP/1.1" 200 15344
+[17/Mar/2023 23:38:04] "GET / HTTP/1.1" 200 644134
+[17/Mar/2023 23:38:06] "GET /articles/detail/65 HTTP/1.1" 200 221905
+[17/Mar/2023 23:38:11] "GET /articles/detail/65 HTTP/1.1" 200 221376
+[17/Mar/2023 23:38:54] "GET /articles/detail/65 HTTP/1.1" 200 221905
+[17/Mar/2023 23:39:10] "GET /articles/detail/65 HTTP/1.1" 200 221902
+[17/Mar/2023 23:39:12] "GET /articles/detail/65 HTTP/1.1" 200 221902
+[17/Mar/2023 23:39:13] "GET /articles/detail/65 HTTP/1.1" 200 221902
+[17/Mar/2023 23:39:13] "GET /articles/detail/65 HTTP/1.1" 200 221902
+[17/Mar/2023 23:40:36] "GET /articles/detail/65 HTTP/1.1" 200 221900
+[17/Mar/2023 23:40:43] "GET / HTTP/1.1" 200 644359
+[17/Mar/2023 23:40:44] "GET /articles/detail/73 HTTP/1.1" 200 15306
+[17/Mar/2023 23:40:48] "GET /articles/detail/72 HTTP/1.1" 200 133803
+[17/Mar/2023 23:40:52] "GET /articles/detail/72 HTTP/1.1" 200 133274
+[17/Mar/2023 23:41:00] "GET /articles/detail/73 HTTP/1.1" 200 15306
+[17/Mar/2023 23:41:01] "GET /articles/update/73 HTTP/1.1" 200 19775
+Forbidden: /articles/update/73
+[17/Mar/2023 23:41:15] "GET /articles/update/73 HTTP/1.1" 403 0
+[17/Mar/2023 23:41:38] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:41:38] "GET /articles/detail/73 HTTP/1.1" 200 15343
+[17/Mar/2023 23:41:39] "GET / HTTP/1.1" 200 644335
+[17/Mar/2023 23:41:56] "GET / HTTP/1.1" 200 644511
+[17/Mar/2023 23:42:04] "GET / HTTP/1.1" 200 644939
+[17/Mar/2023 23:42:09] "GET / HTTP/1.1" 200 644829
+[17/Mar/2023 23:42:13] "GET / HTTP/1.1" 200 644697
+[17/Mar/2023 23:42:20] "GET / HTTP/1.1" 200 644829
+[17/Mar/2023 23:42:31] "GET / HTTP/1.1" 200 670564
+[17/Mar/2023 23:42:41] "GET / HTTP/1.1" 200 645367
+[17/Mar/2023 23:43:28] "GET / HTTP/1.1" 200 645362
+[17/Mar/2023 23:43:28] "GET / HTTP/1.1" 200 645137
+[17/Mar/2023 23:43:33] "GET / HTTP/1.1" 200 645361
+Internal Server Error: /projects/detail/13
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/defaulttags.py", line 214, in render
+    nodelist.append(node.render_annotated(context))
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/fields/files.py", line 63, in url
+    self._require_file()
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError("The '%s' attribute has no file associated with it." % self.field.name)
+ValueError: The 'image' attribute has no file associated with it.
+[17/Mar/2023 23:43:52] "GET /projects/detail/13 HTTP/1.1" 500 291704
+Not Found: /favicon.ico
+[17/Mar/2023 23:43:52] "GET /favicon.ico HTTP/1.1" 404 3340
+Internal Server Error: /projects/detail/13
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/defaulttags.py", line 214, in render
+    nodelist.append(node.render_annotated(context))
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/fields/files.py", line 63, in url
+    self._require_file()
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError("The '%s' attribute has no file associated with it." % self.field.name)
+ValueError: The 'image' attribute has no file associated with it.
+[17/Mar/2023 23:43:53] "GET /projects/detail/13 HTTP/1.1" 500 288414
+[17/Mar/2023 23:44:13] "GET /projects/list/ HTTP/1.1" 200 12643
+[17/Mar/2023 23:44:13] "GET /projects/list/ HTTP/1.1" 200 12597
+Internal Server Error: /projects/detail/13
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.7/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/defaulttags.py", line 214, in render
+    nodelist.append(node.render_annotated(context))
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/fields/files.py", line 63, in url
+    self._require_file()
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError("The '%s' attribute has no file associated with it." % self.field.name)
+ValueError: The 'image' attribute has no file associated with it.
+[17/Mar/2023 23:44:15] "GET /projects/detail/13 HTTP/1.1" 500 291718
+[17/Mar/2023 23:44:22] "GET /articles/list/ HTTP/1.1" 200 645375
+[17/Mar/2023 23:44:23] "GET /articles/detail/73 HTTP/1.1" 200 15337
+[17/Mar/2023 23:44:23] "GET /articles/list/ HTTP/1.1" 200 645150
+[17/Mar/2023 23:44:24] "GET /articles/update/73 HTTP/1.1" 200 19843
+[17/Mar/2023 23:44:56] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:44:56] "GET /articles/detail/73 HTTP/1.1" 200 15487
+[17/Mar/2023 23:44:56] "GET /articles/detail/73 HTTP/1.1" 200 14958
+[17/Mar/2023 23:45:47] "GET /articles/detail/73 HTTP/1.1" 200 15503
+[17/Mar/2023 23:45:48] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:45:49] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:45:50] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:46:04] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:46:05] "GET /articles/detail/73 HTTP/1.1" 200 15503
+[17/Mar/2023 23:46:07] "GET /articles/update/73 HTTP/1.1" 200 20251
+Forbidden: /articles/update/73
+[17/Mar/2023 23:46:15] "GET /articles/update/73 HTTP/1.1" 403 0
+[17/Mar/2023 23:46:36] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:46:36] "GET /articles/detail/73 HTTP/1.1" 200 15602
+[17/Mar/2023 23:46:38] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:46:43] "GET /articles/detail/73 HTTP/1.1" 200 15602
+[17/Mar/2023 23:46:47] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:46:52] "GET /articles/detail/73 HTTP/1.1" 200 15602
+[17/Mar/2023 23:46:53] "GET /articles/update/73 HTTP/1.1" 200 20473
+[17/Mar/2023 23:46:56] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:46:57] "GET /articles/detail/73 HTTP/1.1" 200 15603
+[17/Mar/2023 23:46:59] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:47:14] "GET /articles/detail/73 HTTP/1.1" 200 15603
+[17/Mar/2023 23:47:16] "GET /articles/update/73 HTTP/1.1" 200 20475
+[17/Mar/2023 23:47:42] "POST /articles/update/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:47:42] "GET /articles/detail/73 HTTP/1.1" 200 15639
+[17/Mar/2023 23:47:46] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:47:59] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:48:03] "GET /articles/detail/61 HTTP/1.1" 200 113223
+[17/Mar/2023 23:49:14] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:15] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:15] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:15] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:16] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:17] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:17] "GET /articles/detail/61 HTTP/1.1" 200 113948
+[17/Mar/2023 23:49:21] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:49:22] "GET /articles/detail/73 HTTP/1.1" 200 15639
+[17/Mar/2023 23:49:25] "GET / HTTP/1.1" 200 645163
+[17/Mar/2023 23:49:28] "GET /accounts/logout/?next=/articles/detail/73 HTTP/1.1" 302 0
+[17/Mar/2023 23:49:28] "GET /articles/detail/73 HTTP/1.1" 200 15110
+[17/Mar/2023 23:49:38] "GET /articles/detail/38 HTTP/1.1" 200 17592
+[17/Mar/2023 23:49:39] "GET /articles/detail/38 HTTP/1.1" 200 17592
+[17/Mar/2023 23:49:45] "GET /accounts/login/?next=/articles/detail/38 HTTP/1.1" 200 10469
+[17/Mar/2023 23:49:46] "GET /accounts/login/?next=/articles/detail/38 HTTP/1.1" 200 10469
+[17/Mar/2023 23:49:48] "POST /accounts/login/ HTTP/1.1" 302 0
+[17/Mar/2023 23:49:49] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:49:52] "GET /articles/detail/38 HTTP/1.1" 200 18317
+[17/Mar/2023 23:49:53] "GET /articles/update/38 HTTP/1.1" 200 21705
+Forbidden: /articles/update/38
+[17/Mar/2023 23:49:54] "GET /articles/update/38 HTTP/1.1" 403 0
+Forbidden: /articles/update/38
+[17/Mar/2023 23:49:57] "GET /articles/update/38 HTTP/1.1" 403 0
+[17/Mar/2023 23:54:33] "POST /articles/update/38 HTTP/1.1" 302 0
+[17/Mar/2023 23:54:33] "GET /articles/detail/38 HTTP/1.1" 200 18551
+[17/Mar/2023 23:54:37] "GET /articles/list/ HTTP/1.1" 200 645402
+[17/Mar/2023 23:54:38] "GET /articles/list/ HTTP/1.1" 200 645177
+/usr/local/lib/python3.7/site-packages/django/views/generic/list.py:88: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'articleapp.models.Article'> QuerySet.
+  allow_empty_first_page=allow_empty_first_page, **kwargs)
+[17/Mar/2023 23:54:40] "GET /accounts/detail/5 HTTP/1.1" 200 48106
+[17/Mar/2023 23:54:41] "GET /accounts/detail/5 HTTP/1.1" 200 46974
+[17/Mar/2023 23:54:43] "GET /articles/detail/4 HTTP/1.1" 200 17489
+[17/Mar/2023 23:54:43] "GET /articles/detail/4 HTTP/1.1" 200 16964
+[17/Mar/2023 23:54:49] "GET /articles/detail/6 HTTP/1.1" 200 14056
+[17/Mar/2023 23:54:50] "GET /articles/detail/6 HTTP/1.1" 200 13531
+[17/Mar/2023 23:54:50] "GET / HTTP/1.1" 200 645388
+[17/Mar/2023 23:54:51] "GET / HTTP/1.1" 200 645163
+[17/Mar/2023 23:54:51] "GET /articles/detail/73 HTTP/1.1" 200 15639
+[17/Mar/2023 23:54:53] "GET /articles/detail/73 HTTP/1.1" 200 15110
+[17/Mar/2023 23:54:55] "GET /articles/detail/38 HTTP/1.1" 200 18551
+[17/Mar/2023 23:54:55] "GET /articles/detail/38 HTTP/1.1" 200 17826
+[17/Mar/2023 23:55:01] "GET /articles/update/38 HTTP/1.1" 200 22423
+Forbidden: /articles/update/38
+[17/Mar/2023 23:55:02] "GET /articles/update/38 HTTP/1.1" 403 0
+[17/Mar/2023 23:56:23] "POST /articles/update/38 HTTP/1.1" 302 0
+[17/Mar/2023 23:56:23] "GET /articles/detail/38 HTTP/1.1" 200 18577
+[17/Mar/2023 23:56:28] "GET / HTTP/1.1" 200 645388
+Not Found: /robots.txt
+[18/Mar/2023 01:06:21] "GET /robots.txt HTTP/1.1" 404 3337
+[18/Mar/2023 01:06:29] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 03:44:54] "GET /static/base.css HTTP/1.1" 200 1162
+[18/Mar/2023 03:44:54] "GET /static/prism.css HTTP/1.1" 200 6952
+[18/Mar/2023 03:44:54] "GET /static/js/prism.js HTTP/1.1" 200 112372
+[18/Mar/2023 03:44:58] "GET /static/icons/favicon.svg HTTP/1.1" 200 943
+[18/Mar/2023 04:10:39] "GET /static/icons/favicon.svg HTTP/1.1" 200 943
+[18/Mar/2023 10:30:48] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 11:16:25] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 11:16:40] "GET /articles/detail/62 HTTP/1.1" 200 15928
+[18/Mar/2023 20:08:22] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 20:34:56] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 20:35:15] "GET /static/js/magicgrid.js HTTP/1.1" 200 6882
+[18/Mar/2023 20:35:19] "GET /static/icons/favicon.svg HTTP/1.1" 200 943
+[18/Mar/2023 20:35:19] "GET /static/js/prism.js HTTP/1.1" 200 112372
+[18/Mar/2023 20:35:20] "GET /static/base.css HTTP/1.1" 200 1162
+[18/Mar/2023 20:35:23] "GET /static/prism.css HTTP/1.1" 200 6952
+[18/Mar/2023 21:05:39] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 21:47:47] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 21:47:47] "GET /static/js/prism.js HTTP/1.1" 200 112372
+[18/Mar/2023 21:47:47] "GET /static/base.css HTTP/1.1" 200 1162
+[18/Mar/2023 21:47:47] "GET /static/prism.css HTTP/1.1" 200 6952
+[18/Mar/2023 21:47:47] "GET /static/icons/favicon.svg HTTP/1.1" 200 943
+[18/Mar/2023 21:47:47] "GET /media/profile/cat_UBBCz74.jpg HTTP/1.1" 200 6108
+[18/Mar/2023 21:47:47] "GET /media/article/react_zDCO97e_wz4PXZc.png HTTP/1.1" 200 3223
+[18/Mar/2023 21:47:47] "GET /static/js/magicgrid.js HTTP/1.1" 200 6882
+[18/Mar/2023 21:47:47] "GET /media/article/react_zDCO97e_SoqUSSC.png HTTP/1.1" 200 3223
+[18/Mar/2023 21:47:47] "GET /media/article/react_zDCO97e.png HTTP/1.1" 200 3223
+[18/Mar/2023 21:47:47] "GET /media/article/react_zDCO97e_wHsbdVc.png HTTP/1.1" 200 3223
+[18/Mar/2023 21:47:47] "GET /media/article/react_EkIEVbO.png HTTP/1.1" 200 3223
+[18/Mar/2023 21:47:47] "GET /media/article/react.png HTTP/1.1" 200 3223
+[18/Mar/2023 21:47:47] "GET /media/article/sssssss.PNG HTTP/1.1" 200 26194
+[18/Mar/2023 21:47:47] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_FvCOGkh.jpg HTTP/1.1" 200 12481
+[18/Mar/2023 21:47:47] "GET /media/article/adad.PNG HTTP/1.1" 200 7637
+[18/Mar/2023 21:47:47] "GET /media/article/ssdsd.PNG HTTP/1.1" 200 6457
+[18/Mar/2023 21:47:47] "GET /media/article/image1_OaGCHgt.jpg HTTP/1.1" 200 7006
+[18/Mar/2023 21:47:47] "GET /media/article/images.png HTTP/1.1" 200 2356
+[18/Mar/2023 21:47:47] "GET /media/article/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_bqC948n.png HTTP/1.1" 200 1501
+[18/Mar/2023 21:47:48] "GET / HTTP/1.1" 200 645163
+[18/Mar/2023 21:48:47] "GET / HTTP/1.1" 200 645163
